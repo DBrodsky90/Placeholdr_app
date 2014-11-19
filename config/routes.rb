@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   root 'splash#index'
 
   resources :users
-  resources :boards
+  resources :boards do
+  	member do
+  		put 'add_image'
+  		put 'remove_image'
+  	end
+  end
   resources :images, except: [:edit, :update]
 
 
