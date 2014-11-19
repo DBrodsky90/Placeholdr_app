@@ -43,6 +43,20 @@ class BoardsController < ApplicationController
 		redirect_to @board
 	end
 
+	def add_image
+		board = Board.find(params[:id])
+		image = Image.find(params[:image_id])
+		board.add_image(image)
+		redirect_to board_path(board)
+	end
+
+	def remove_image
+		board = Board.find(params[:id])
+		image = Image.find(params[:image_id])
+		board.remove_image(image)
+		redirect_to board_path(board)
+	end
+
 	private
 
 	def board_params
