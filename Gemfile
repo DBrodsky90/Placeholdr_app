@@ -33,6 +33,12 @@ gem 'spring',        group: :development
 
 gem 'pry-rails', group: :development
 
+group :development do
+  gem 'rspec-rails'
+  gem 'rspec-collection_matchers'
+  gem 'shoulda-matchers', require: false
+end
+
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
