@@ -1,0 +1,9 @@
+<h1>New User</h1>
+
+<% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+
+<hr>
+
+<%= render 'form'%>
