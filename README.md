@@ -7,7 +7,7 @@ Github : DBrodsky90
 Name: Amanda Trexler
 Github: mandytrex
 =======
-Name: Lauren Levine
-Github: llevine
+Name : Lauren Levine
+Github : llevine
 
 
