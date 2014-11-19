@@ -60,6 +60,6 @@ class BoardsController < ApplicationController
 	private
 
 	def board_params
-		params.require(:entry).permit(:name, :theme, :public, :user)
+		params.require(:board).permit(:name, :theme, :public, :user)
 	end
 end
