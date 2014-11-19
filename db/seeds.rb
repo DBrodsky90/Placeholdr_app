@@ -28,3 +28,4 @@ User.create({
 	password_confirmation: "amanda"
 	avatar: "http://placekitten.com/g/200/200"
 	})
+
