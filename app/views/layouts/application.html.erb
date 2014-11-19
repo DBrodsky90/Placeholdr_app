@@ -1,12 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PlaceholdrApp</title>
+  <title>Placehold.r</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% if session[:current_user_id] %>
+	Welcome <%= User.find(session[:current_user_id]).username %>
+	<%= link_to "Log Out", sessions_path, method: :delete %>
+<% else %>
+	<%= link_to "Sign Up", new_user_path %>
+	<%= link_to "Log In", login_path %>
+<% end %>
+
+
 
 <%= yield %>
 
