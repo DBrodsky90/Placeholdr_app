@@ -1,0 +1,25 @@
+  [1m[36m (182.0ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (28.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateBoards (20141119164517)
+  [1m[35m (15.9ms)[0m  BEGIN
+  [1m[36m (133.6ms)[0m  [1mCREATE TABLE "boards" ("id" serial primary key, "name" character varying(255), "theme" character varying(255), "public" boolean, "user_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (29.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141119164517"]]
+  [1m[36m (1.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUsers (20141119164523)
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36m (24.8ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "username" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "password_digest" character varying(255), "avatar" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (1.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141119164523"]]
+  [1m[36m (1.7ms)[0m  [1mCOMMIT[0m
+Migrating to CreateImages (20141119164626)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (5.4ms)[0m  [1mCREATE TABLE "images" ("id" serial primary key, "title" character varying(255), "imgurl" text, "width" character varying(255), "height" character varying(255), "filesize" character varying(255), "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20141119164626"]]
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBoardsImages (20141119164932)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mCREATE TABLE "boards_images" ("board_id" integer NOT NULL, "image_id" integer NOT NULL) [0m
+  [1m[35m (58.1ms)[0m  CREATE TABLE "boards_images" ("id" serial primary key) 
+PG::DuplicateTable: ERROR:  relation "boards_images" already exists
+: CREATE TABLE "boards_images" ("id" serial primary key) 
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
