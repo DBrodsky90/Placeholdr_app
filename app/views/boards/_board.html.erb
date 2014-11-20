@@ -1,7 +1,4 @@
-<h1><%= board.name %></h1>
-
-<h1><%= board.user.username if board.user %>'s Cork Board</h1>
-
-<p>
-  <%= board.images %>
-</p>
+<% if public_board %>
+	<h1><%= board.user.username if board.user %>'s Cork Board</h1>
+	<h3><%= link_to "#{board.name}", board_path(board) %></h3>
+<% end %>
