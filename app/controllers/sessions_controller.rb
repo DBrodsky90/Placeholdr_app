@@ -17,5 +17,4 @@ class SessionsController < ApplicationController
 		session[:current_user_id] = nil
 		redirect_to users_path
 	end
-
 end
