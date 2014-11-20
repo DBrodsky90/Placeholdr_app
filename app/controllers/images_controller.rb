@@ -2,7 +2,9 @@ class ImagesController < ApplicationController
 
 	def index
 		@images = BingWrapper.search(params[:search])
-		@boards = User.find(session[:current_user_id]).boards
+		if session[:current_user_id]
+			@boards = User.find(session[:current_user_id]).boards
+		end
 	end
 
 	def show
