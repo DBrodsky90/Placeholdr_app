@@ -3,9 +3,11 @@
 	<p>
 		<img src="<%= user.avatar %>">
 	<br>
-	<%= user.first_name %> <%= user.last_name %>
 	</p>
 		<% if params[:id] %>
+		<p>
+		<%=user.first_name %> <%= user.last_name %>
+		</p>
 			<%= link_to "Edit User", edit_user_path(user) %>
 		<% else %>
 			<%= link_to "View User", user_path(user) %>
