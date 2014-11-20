@@ -13,7 +13,10 @@
 </h3>
 
 <% @board.images.each do |image| %> 
-	<img src="<%= image.imgurl %>">
+<!-- makes the image a link to that images image show page -->
+	<%= link_to(image_path(image)) do %>
+		<img src="<%= image.imgurl %>">
+	<% end %>
 <% end %>
 <br>
 
