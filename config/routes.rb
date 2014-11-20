@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   		put 'remove_image'
   	end
   end
-  resources :images, except: [:edit, :update]
+  resources :images, except: [:edit, :update, :new]
 
 
   get 'sessions/new' => 'sessions#new', as: 'login'
