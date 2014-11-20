@@ -1,0 +1,10 @@
+<h1>Edit User</h1>
+
+<% @user.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+<% end %>
+
+<hr>
+
+<%= render 'form' %>
+<%= link_to "Delete", user_path(@user), method: :delete %>
