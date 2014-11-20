@@ -1,3 +1,6 @@
+<% if session[:current_user_id] %>
+	<%= render partial: 'buttons', locals: {new_board: true, edit_board: false} %>
+<% end %>
 <% @boards.each do |board| %>
 		<%= render partial: 'board', locals: {board: board, show: false} %>
 <% end %>
