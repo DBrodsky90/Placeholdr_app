@@ -1,2 +1,6 @@
 <h1><%= @user.first_name.capitalize %>'s Page </h>
 <%= render @user %>
+
+<% @user.boards.each do |board| %>
+	<%= render partial: '/boards/board', locals: {board: board, show: true} %>
+	<% end %>
