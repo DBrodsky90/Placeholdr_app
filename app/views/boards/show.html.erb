@@ -12,6 +12,9 @@
 	<% end %>
 </h3>
 
-<%= render partial: 'buttons', locals: {new_board: false, edit_board: true} %><br>
+<% @board.images.each do |image| %> 
+	<img src="<%= image.imgurl %>">
+<% end %>
+<br>
 
-USERS IMAGES WOULD GO HERE
+<%= render partial: 'buttons', locals: {new_board: false, edit_board: true} %><br>
