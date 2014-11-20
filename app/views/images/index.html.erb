@@ -1,0 +1,22 @@
+<% @images.each do |image| %>
+
+	<div>
+		<p> Image Title : <%= image[:Title] %> </p>
+		<p> Width : <%= image[:Width] %>, Height : <%= image[:Height] %> </p>
+		<p> File Type : <%= image[:ContentType] %> </p>
+		<img src="<%= image[:MediaUrl] %>">
+		<% if session[:current_user_id] %>
+			<%= form_tag(images_path, :method => "post") do %>
+				<%= hidden_field :image, :title, :value => image[:Title] %>
+				<%= hidden_field :image, :imgurl, :value => image[:MediaUrl] %>
+				<%= hidden_field :image, :width, :value => image[:Width] %>
+				<%= hidden_field :image, :height, :value => image[:Height] %>
+				<%= hidden_field :image, :filesize, :value => image[:FileSize] %>
+				<%= collection_select(nil, :board_id, @boards, :id, :name) %>
+				<br><br>
+				<%= submit_tag "Add Image To Board", :name => nil %>
+			<% end %>
+		<% end %>
+	</div>
+
+<% end %>
