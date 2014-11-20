@@ -1,12 +1,3 @@
-
-
-<!-- If @board.public && user is NOT logged in
-	show only public boards
-	else
-	only show boards by that user -->
-
-<% if session[:current_user_id]  %>
-	<%= render @boards %>
-<% else %>
-	<%= render partial: 'board', locals: {board: @board, public_board: true} %>
+<% @boards.each do |board| %>
+		<%= render partial: 'board', locals: {board: board, show: false} %>
 <% end %>

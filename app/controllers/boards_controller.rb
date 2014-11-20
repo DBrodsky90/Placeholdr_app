@@ -4,6 +4,7 @@ class BoardsController < ApplicationController
 
 	def index
 		@boards = Board.all
+		@users = User.all
 	end
 
 	def show
