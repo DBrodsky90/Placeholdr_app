@@ -4,7 +4,7 @@ class BoardsController < ApplicationController
 
 	def index
 		@boards = Board.all
-		@users = User.all
+		@user = current_user
 	end
 
 	def show
