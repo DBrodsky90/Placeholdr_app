@@ -4,13 +4,11 @@
 		<img src="<%= user.avatar %>">
 	<br>
 	</p>
-		<% if params[:id] %>
-		<p>
-		<%=user.first_name %> <%= user.last_name %>
-		</p>
+
+		<% if user == @current_user %>
 			<%= link_to "Edit User", edit_user_path(user) %>
-		<% else %>
-			<%= link_to "View User", user_path(user) %>
 		<% end %>
-	</p>
-</div>
+
+	<% if index_page %>
+	  <%= link_to "View User", user_path(user) %>
+	 <% end %>

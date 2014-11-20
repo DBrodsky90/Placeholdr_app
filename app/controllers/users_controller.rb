@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 	
 	def show
 		@user = User.find(params[:id])
+		@current_user = current_user
 	end
 
 	def new
@@ -25,23 +26,31 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
+		if @user != current_user
+			redirect_to @user
+		end
 	end
 
 	def update
 		@user = User.find(params[:id])
-		if @user.update(user_params)
-			redirect_to(user_path(@user))
+		if @usser != current_user
+			redirect_to users_path
 		else
-			redirect_to(edit_user_path(@user))
+			if @user.update(user_params)
+				redirect_to @user
+			else
+				redirect_to(edit_user_path(@user))
+			end
 		end
 	end
 
 	def destroy
 		@user = User.find(params[:id])
-		if @user.destroy
-			redirect_to(users_path)
+		if @user != current_user
+			redirect_to users_path
 		else
-			redirect_to(edit_user_path(@user))
+			@user.destroy
+			redirect_to(users_path)
 		end
 	end
 
