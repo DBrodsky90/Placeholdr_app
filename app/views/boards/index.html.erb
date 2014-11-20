@@ -1,1 +1,6 @@
-<%= render @boards %>
+<% @boards.each do |board| %>
+		<%= render partial: 'board', locals: {board: board, show: false} %>
+<% end %>
+
+
+ 

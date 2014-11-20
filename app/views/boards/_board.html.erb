@@ -1,7 +1,11 @@
-<h1><%= board.name %></h1>
+<% if show %>
+	<h1><%= board.user.username if board.user %>'s Cork Board</h1>
+<% end %>
 
-<h1><%= board.user.username if board.user %>'s Cork Board</h1>
 
-<p>
-  <%= board.images %>
-</p>
+<!-- makes it so that only private boards are seen when logged in and public boards are always seen -->
+<% if session[:current_user_id]  %>
+	<h3><%= link_to "#{board.name}", board_path(board) %></h3>		
+<% elsif board.public == true %>
+	<h3><%= link_to "#{board.name}", board_path(board) %></h3>
+<% end %>

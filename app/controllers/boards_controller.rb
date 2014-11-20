@@ -1,9 +1,10 @@
 class BoardsController < ApplicationController
 
-	before_action :authenticate
+	# before_action :authenticate
 
 	def index
 		@boards = Board.all
+		@users = User.all
 	end
 
 	def show

@@ -1,2 +1,14 @@
-got to show boards
-<%= @board.public %>
+<h1>
+	<%= @board.name %>
+</h1>
+
+<h3>
+	Created by: <%= @board.user.first_name %><br>
+
+	<% if @board.public == true %>
+		<%= @board.name %> Board is public.
+	<% else %>
+		<%= @board.name %> This Board is private.
+	<% end %>
+</h3>
+
