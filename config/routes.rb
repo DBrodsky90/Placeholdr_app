@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   end
   resources :images, except: [:edit, :update, :new]
 
+  get 'home/index' => 'home#index', as: 'home'
 
   get 'sessions/new' => 'sessions#new', as: 'login'
   post 'sessions'    => 'sessions#create'

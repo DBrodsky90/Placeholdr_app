@@ -3,4 +3,13 @@ class Board < ActiveRecord::Base
 	belongs_to :user
 
 	validates :name, :theme, presence: true
+
+	def add_image(image)
+		self.images.push(image)
+	end
+
+	def remove_image(image)
+		self.images.destroy(image)
+	end
+
 end
