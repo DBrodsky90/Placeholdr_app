@@ -1,6 +1,7 @@
 <h1><%= @user.first_name.capitalize %>'s Page </h>
 <%= render @user %>
 
+<h1><%= @user.username%>'s Cork Boards</h1>
 <% @user.boards.each do |board| %>
-	<%= render partial: '/boards/board', locals: {board: board, show: true} %>
+	<%= render partial: '/boards/board', locals: {board: board} %>
 	<% end %>
