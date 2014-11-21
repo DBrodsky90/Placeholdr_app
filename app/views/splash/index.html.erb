@@ -2,7 +2,7 @@
 	<h1 class="splash-heading">Welcome Page</h1>
 	<div class="splash-form">
 		<%= render '/sessions/form' %> <br>
-		<%= button_to "Continue As Guest", home_path %> <br>
-		<%= button_to "Sign Up", new_user_path %>
+		<%= button_to "Continue As Guest", home_path: :get %> <br>
+		<%= button_to "Sign Up", new_user_path, method: :post %>
 	</div>
 </div>	
