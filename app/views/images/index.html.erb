@@ -6,6 +6,7 @@
 			<p> Width : <%= image[:Width] %>, Height : <%= image[:Height] %> </p>
 			<p> File Type : <%= image[:ContentType] %> </p>
 			<img src="<%= image[:MediaUrl] %>">
+			<p> Image URL : <%= image[:MediaUrl] %> </p>
 			<% if session[:current_user_id] %>
 				<%= form_tag(images_path, :method => "post") do %>
 					<%= hidden_field :image, :title, :value => image[:Title] %>
