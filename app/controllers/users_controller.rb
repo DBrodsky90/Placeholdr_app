@@ -45,11 +45,16 @@ class UsersController < ApplicationController
 
 	def destroy
 		@user = User.find(params[:id])
+
+		# might not need the below statement, because can't get to edit page unless logged in.
+		# to close session add:  session[:current_user_id] = nil
 		if @user != current_user
 			redirect_to users_path
 		else
 			@user.destroy
+			session[:current_user_id] = nil
 			redirect_to(users_path)
+
 		end
 	end
 

@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 
 	def new
+		session[:current_user_id] = nil
 	end
 
 	def create
