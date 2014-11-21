@@ -1,8 +1,17 @@
-<h1><%= @user.first_name.capitalize %>'s Page </h>
-<%= render partial: 'user', locals: {user: @user, index_page: false} %>
+<div class="main_content">
 
+	<div class="bio">
+	<h1><%= @user.first_name.capitalize %>'s Page </h>
+	<%= render partial: 'user', locals: {user: @user, index_page: false} %>
+	</div>
+
+<!-- displays all boards for this specific user -->
 
 <h1><%= @user.username%>'s Cork Boards</h1>
-<% @user.boards.each do |board| %>
-	<%= render partial: '/boards/board', locals: {board: board} %>
-	<% end %>
+	<div class="single board">
+	<% @user.boards.each do |board| %>
+		<%= render partial: '/boards/board', locals: {board: board} %>
+		<% end %>
+	</div>
+
+</div>

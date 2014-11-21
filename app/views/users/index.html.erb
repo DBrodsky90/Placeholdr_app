@@ -1,6 +1,11 @@
+<div class="main_content">
+
 <h1>Users Index</h1>
 
+<div class="single user">
 <% @users.each do |user| %>
 <%= render partial: 'user', locals: {user: user, index_page: true} %>
 <% end %>
+</div>
 
+</div>
