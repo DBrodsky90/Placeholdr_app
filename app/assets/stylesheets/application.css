@@ -14,6 +14,30 @@
  *= require_self
  */
 
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
 .nav-splash {
+	width: 100%;
 	display: none;
+}
+
+.splash-container {
+	width: 100%;
+	height: 100%;
+	background-image: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg")
+}
+
+.splash-heading {
+	width: 100%;
+	text-align: center;
+}
+
+.splash-form {
+	width: 100%;
+	text-align: center;
+	margin-top: 10%;
 }
