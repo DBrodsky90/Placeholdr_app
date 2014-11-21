@@ -3,8 +3,11 @@
 <h1>Edit User</h1>
 
 <!-- this will show an error on edit form page if the form is not filled in with the requirements for user -->
-<% @user.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
+
+<% if @user.errors.any? %>
+  <div>
+    <h3 style="color:red">Please fix the appropriate fields:</h3>
+  </div>
 <% end %>
 
 <hr>
@@ -16,3 +19,4 @@
 <%= button_to "Delete", user_path(@user), method: :delete %>
 
 </div>
+

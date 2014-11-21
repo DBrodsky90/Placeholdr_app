@@ -14,6 +14,13 @@
  *= require_self
  */
 
+/*nav bar won't display on splash page*/
 .nav-splash {
 	display: none;
+}
+
+/*this format the input field of a form when there is an error*/
+/*do not remove below only edit */
+.field_with_errors input {
+  border: 1px solid red;
 }
