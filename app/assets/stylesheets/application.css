@@ -14,13 +14,36 @@
  *= require_self
  */
 
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
 /*nav bar won't display on splash page*/
 .nav-splash {
+	width: 100%;
 	display: none;
 }
 
-/*this format the input field of a form when there is an error*/
-/*do not remove below only edit */
+.splash-container {
+	width: 100%;
+	height: 100%;
+	background-image: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg")
+}
+
+.splash-heading {
+	width: 100%;
+	text-align: center;
+}
+
+.splash-form {
+	width: 100%;
+	text-align: center;
+	margin-top: 10%;
+}
+
 .field_with_errors input {
   border: 1px solid red;
 }
