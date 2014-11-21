@@ -1,20 +1,32 @@
-<h1>
-	<%= @board.name %>
-</h1>
+<div class="main_content">
+	<h1>
+		<%= @board.name %>
+	</h1>
 
-<h3>
-	Created by: <%= @board.user.first_name %><br>
+	<!-- board information contained in this block -->
+	<p>
+		<span>Created by:</span> <%= @board.user.first_name %> <%= @board.user.last_name %><br>
+		<% if @board.public == true %>
+			This board is public.
+		<% else %>
+			<%= @board.name %> This Board is private.
+		<% end %>
+	</p>
 
-	<% if @board.public == true %>
-		<%= @board.name %> Board is public.
-	<% else %>
-		<%= @board.name %> This Board is private.
+	<!-- code block adds the images that belong to that specific board to the show view  -->
+	<% @board.images.each do |image| %> 
+		<div class="single board">
+			<!-- makes the image a link to that images image show page -->
+			<%= link_to(image_path(image)) do %>
+				<img src="<%= image.imgurl %>">
+			<% end %>
+			<%= image.imgurl %>
+		</div>
 	<% end %>
-</h3>
+	<br>
 
-<% @board.images.each do |image| %> 
-	<img src="<%= image.imgurl %>">
-<% end %>
-<br>
-
-<%= render partial: 'buttons', locals: {new_board: false, edit_board: true} %><br>
+	<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
+	<% if @board.user == @current_user %>
+		<%= render partial: 'buttons', locals: {new_board: false, edit_board: true,  find_image: true, delete: true} %><br>
+	<% end %>
+</div>

@@ -1,18 +1,17 @@
 <%= form_for @board do |f| %>
-  <%= f.label :name %> <br>
-  <%= f.text_field :name %> <br>
+  <%= f.label :name, "Board Name:" %><br>
+  <%= f.text_field :name %><br>
 
-  <%= f.label :theme %> <br>
-  <%= f.text_field :theme %> <br>
+  <%= f.label :theme, "Project Theme:" %><br>
+  <%= f.text_field :theme %><br>
 
+  <p>Board Privacy Settings:</p>
+  <%= f.radio_button(:public, true) %>  
+  <%= f.label(:public, "Public") %><br>
 
-  <%= f.radio_button(:public, true) %> <br>
-  <%= f.label(:public, "Public") %> <br>
+  
+  <%= f.radio_button(:public, false) %>
+  <%= f.label(:public, "Private") %><br>
 
-  <%= f.radio_button(:public, false) %> <br>
-  <%= f.label(:public, "Private") %> <br>
-
-  <br>
-    <%= f.submit %>
-
+ <br><%= f.submit %>
 <% end %>
