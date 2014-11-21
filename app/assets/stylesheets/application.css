@@ -16,9 +16,7 @@
 
 
 body {
-	width: 100%;
-	height: 100%;
-	margin: 0 auto;
+	background: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg");
 }
 
 /*nav bar won't display on splash page*/
@@ -27,15 +25,13 @@ body {
 	display: none;
 }
 
-.splash-container {
-	width: 100%;
-	height: 100%;
-	background-image: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg")
+.splash-container {	
 }
 
 .splash-heading {
 	width: 100%;
 	text-align: center;
+	margin-top: 10%;
 }
 
 .splash-form {
