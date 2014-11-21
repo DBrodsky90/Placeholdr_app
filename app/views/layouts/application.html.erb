@@ -8,7 +8,7 @@
 </head>
 <body>
 
-
+<!-- class is set to that value because you want the class of the navbar to = what page the user is on -->
 	<nav class='nav-<%= params[:controller]%>'>
 		<% if session[:current_user_id] %>
 			Welcome <%= User.find(session[:current_user_id]).username %> <br>
