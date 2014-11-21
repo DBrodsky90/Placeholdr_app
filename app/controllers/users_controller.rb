@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-	before_action :authenticate
-
 	def index
 		@users = User.all
 	end
@@ -17,6 +15,7 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
+		@user.id = session[:current_user_id]
 		if @user.save
 			redirect_to users_path
 		else
