@@ -12,11 +12,13 @@
  <%= f.label :avatar %><br>
   <%= f.text_field :avatar %><br>
 
+<% if new_page %>
   <%= f.label :password %><br>
   <%= f.password_field :password %><br>
 
   <%= f.label :password_confirmation %><br>
   <%= f.password_field :password_confirmation %><br>
+  <% end %>
 
   <br><%= f.submit %>
 <% end %>
