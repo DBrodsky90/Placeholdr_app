@@ -12,9 +12,11 @@ class ImagesController < ApplicationController
 	end
 
 	def create
-		@image = Image.create(image_params)
 		board = Board.find(params[:board_id])
-		board.add_image(@image)
+		params["selected_images"].each do |image|
+			image_obj =  Image.create(image_params(image))
+			board.add_image(image_obj)
+		end
 		redirect_to board_path(board)
 	end
 
@@ -26,8 +28,8 @@ class ImagesController < ApplicationController
 
 	private
 
-	def image_params
-		params.require(:image).permit(:title, :imgurl, :width, :height, :filesize)
+	def image_params(image_name)
+		params.require(image_name).permit(:title, :imgurl, :width, :height, :filesize)
 	end
 
 end

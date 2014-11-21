@@ -2,7 +2,7 @@
 	<%= form_tag(images_path, :method => "post") do %>			
 		<% @images.each_with_index do |image, index| %>
 			<div class="single image">
-				<%= check_box_tag("image#{index}") %>
+				<%= check_box_tag("selected_images[]" ,"image#{index}") %>
 				<p> Image Title : <%= image[:Title] %> </p>
 				<p> Width : <%= image[:Width] %>, Height : <%= image[:Height] %> </p>
 				<p> File Type : <%= image[:ContentType] %> </p>
@@ -15,5 +15,6 @@
 				<%= hidden_field "image#{index}", :filesize, :value => image[:FileSize] %>
 			</div>
 		<% end %>
+		<%= submit_tag %>
 	<% end %>
 </div>
