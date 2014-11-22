@@ -113,6 +113,15 @@ background: red;
   /*  background: white;*/
 }
 
+.nav_avatar{
+    max-width: 50px;
+    max-height: 50px;
+}
+.nav_avatar img{
+    width: 100%;
+    height: auto;
+}
+
 
 /*////////////////////////////////////////////////////////////*/
 
