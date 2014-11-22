@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  root 'splash#index'
+  # root 'splash#index'
+  root 'sessions#new'
+
 
   resources :users
   resources :boards do

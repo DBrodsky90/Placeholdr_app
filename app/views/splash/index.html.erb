@@ -1,8 +1,9 @@
-<div class="splash-container">
-	<h1 class="splash-heading">Welcome Page</h1>
-	<div class="splash-form">
-		<%= render '/sessions/form' %> <br>
-		<%= button_to "Continue As Guest", home_path, method: :get %> <br>
-		<%= button_to "Sign Up", new_user_path, method: :get %>
+<div class="splash">
+	<img src="http://i.imgur.com/QwBNW0D.png" id="logo">
+	<div class="form" id="signup">
+		<h1>Please Login</h1>
+		<hr>
+		<%= render '/sessions/form' %> 
+		<h3><%= link_to "Continue As Guest", home_path %> | <%= link_to "Sign Up", new_user_path %><h3>
 	</div>
 </div>	

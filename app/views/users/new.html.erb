@@ -3,9 +3,7 @@
 
 <!-- shows errors on new form page if form is not filled in with requirements for new user, will not be allowed to create unless required fields are filled -->
 <% if @user.errors.any? %>
-  <div>
     <h3 style="color:red">Please fix the appropriate fields:</h3>
-  </div>
 <% end %>
 
 <hr>
