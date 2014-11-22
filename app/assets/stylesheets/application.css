@@ -31,12 +31,58 @@ body {
 
 a {
 	text-decoration: none;
-    height: 50px;
+    color: white;
 }
 
 #navbar {
-        background: black;
+    background: black;
+    height: 100px;
 }
+
+#navbar>a, #navbar>ul span, #navbar label, #navbar h4 {
+        background: black;
+        color: white;
+        margin: 0 10px;
+}
+
+#navbar>ul span {
+    padding-left: 10px;
+}
+
+#profile_link {
+   
+}
+
+/*#navbar form {
+background: red;
+}*/
+
+#navbar li {
+    float: right;
+    margin: 10px 15px;
+    list-style-type: none;
+}
+
+#navbar>ul label {
+    text-transform: uppercase;
+    padding: 2px;
+}
+
+#navbar>ul input[type=submit] {
+    text-transform: uppercase;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    padding: 2px 5px;
+}
+
+.main_content {
+/*    background: rgba(255, 255, 255, .4);
+*/
+  /*  background: white;*/
+}
+
+
 /*////////////////////////////////////////////////////////////*/
 
 
@@ -44,19 +90,21 @@ a {
 /* ------------------------- SPLASH SPECIFIC STYLING ----------------------- */
 
 /*nav bar won't display on splash page*/
-.nav-sessions>a {
+.nav-sessions>ul>li {
 	display: none;
 }
 
 #logo  {
-   /* position: fixed;*/
+    float: left;
 	width: inherit;
-	margin: 0 auto;
 }
 
 /*////////////////////////////////////////////////////////////*/
 
+/* ------------------------- MAIN STYLING ----------------------- */
 
+
+/*////////////////////////////////////////////////////////////*/
 
 /*-----------------FORM STYLING GOES HERE--------------------*/
 
@@ -150,4 +198,11 @@ a {
 #signup h3>a:hover {
     color: black;
     background: #f0ff00;
+}
+
+/*---nav bar styling---*/
+
+#navbar>ul input[type=submit]:hover {
+    background: #f0ff00;
+    color: black;
 }
