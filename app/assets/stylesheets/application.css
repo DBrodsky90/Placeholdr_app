@@ -46,17 +46,18 @@ a {
 
 #navbar h4 {
     margin: 0;
+    font-size: 18px;
 }
 
-/*----- places the logo and search bar on left side of navbar -----*/
 #navbar .nav_left {
     float: left;
 }
 
 #navbar .nav_right {
     float: right;
-    margin: 0 25px;
+    margin: 15px 25px;
 }
+
 /*-------end -------*/
 
 #navbar li {
@@ -67,6 +68,10 @@ a {
 #navbar span {
     color: #f0ff00;
     font-weight: 700;
+}
+
+#navbard span {
+    background: green;
 }
 
 #navbar>ul input[type=submit] {
@@ -80,6 +85,12 @@ a {
 #search form {
     margin: 35px 20px;
     
+}
+
+#navbar #profile_link {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
 }
 
 /*////////////////////////////////////////////////////////////*/
@@ -126,6 +137,10 @@ background: red;
 }
 
 /*////////////////////////////////////////////////////////////*/
+
+
+
+
 
 /* ------------------------- MAIN STYLING ----------------------- */
 

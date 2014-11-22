@@ -2,23 +2,34 @@
 
 
 <% if welcome %>
-<li class="nav_right"><h4>Welcome <%= User.find(session[:current_user_id]).username %></h4><span id="profile_link"><%= link_to "Profile", user_path(session[:current_user_id]) %> | <%= link_to "Log Out", sessions_path, method: :delete %></li>
-<% end %>
-
-<% if sign_up %>
-<li class="nav_right"><%= link_to "Sign Up", new_user_path %></li>
+	<li class="nav_right" id="profile">
+		<h4>Welcome <%= User.find(session[:current_user_id]).username %></h4>
+		<span><%= link_to "Profile", user_path(session[:current_user_id]) %> | <%= link_to "Log Out", sessions_path, method: :delete %></span>
+	</li>
 <% end %>
 
 <% if log_in %>
-<li class="nav_right"><%= link_to "Log In", login_path %> <span> |</span></li>
+	<li class="nav_right">
+		<%= link_to "Log In", login_path %>
+	</li>
+<% end %>
+
+<% if sign_up %>
+	<li class="nav_right">
+		<%= link_to "Sign Up", new_user_path %> <span> | </span>
+	</li>
 <% end %>
 
 <% if all_boards %>
-<li class="nav_right"><%= link_to "All Boards", boards_path %> <span> |</span></li>
+	<li class="nav_right">
+		<%= link_to "All Boards", boards_path %> <span> | </span>
+	</li>
 <% end %>
 
 <% if all_users %>
-<li class="nav_right"><%= link_to "Members", users_path %> <span> |</span></li>
+	<li class="nav_right">
+		<%= link_to "Members", users_path %> <span> | </span>
+	</li>
 <% end %>
 
 
@@ -26,9 +37,11 @@
 
 
 <% if home %>
-	<li class="nav_left"><%= link_to home_path do %>
-		<img src="http://i.imgur.com/QwBNW0D.png" id="logo">
-	<% end %></li>
+	<li class="nav_left">
+		<%= link_to home_path do %>
+			<img src="http://i.imgur.com/jvgD4nz.png" id="logo">
+		<% end %>
+	</li>
 <% end %>
 
 <% if search %>
