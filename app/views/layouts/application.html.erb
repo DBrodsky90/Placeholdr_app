@@ -7,23 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
 <!-- class is set to that value because you want the class of the navbar to = what page the user is on -->
-	<nav class='nav-<%= params[:controller]%>'>
+<nav class='nav-<%= params[:controller]%>' id="navbar">
+	<img src="http://i.imgur.com/QwBNW0D.png" id="logo">
+	<ul>
 		<% if session[:current_user_id] %>
-			Welcome <%= User.find(session[:current_user_id]).username %> <br>
-			<%= link_to "Your Profile", user_path(session[:current_user_id]) %> <br>
-			<%= link_to "Log Out", sessions_path, method: :delete %> <br>
-			<%= link_to "Home", home_path %> <br>
-			<%= link_to "Users", users_path %> <br>
-			<%= link_to "All Boards", boards_path %> <br>
+			<%= render partial: 'sessions/navbar', locals: { welcome: true, profile: true, log_in: false, log_out: true, sign_up: false, home: true, all_users: true, all_boards: true, search: true } %>
 		<% else %>
-			<%= link_to "Sign Up", new_user_path %> <br>
-			<%= link_to "Log In", login_path %> <br>
-			<%= link_to "Home", home_path %> <br>
-			<%= link_to "All Boards", boards_path %> <br>
+			<%= render partial: 'sessions/navbar', locals: { welcome: false, profile: false, log_in: true, log_out: false, sign_up: true, home: true, all_users: false, all_boards: true, search: true } %>
 		<% end %>
-	</nav>
+	</ul>
+</nav>
 
 
 <%= yield %>

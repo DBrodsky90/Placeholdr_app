@@ -1,0 +1,35 @@
+<% if welcome %>
+<li><h4>Welcome <%= User.find(session[:current_user_id]).username %></h4><span id="profile_link"><%= link_to "Profile", user_path(session[:current_user_id]) %></span></li>
+<% end %>
+
+<% if log_in %>
+<li><%= link_to "Log In", login_path %> <span> |</span></li>
+<% end %>
+
+<% if log_out %>
+<li><%= link_to "Log Out", sessions_path, method: :delete %> <span> |</span></li>
+<% end %>
+
+<% if sign_up %>
+<li><%= link_to "Sign Up", new_user_path %> <span> |</span></li>
+<% end %>
+
+<% if home %>
+<li><%= link_to "Home", home_path %> <span> |</span></li>
+<% end %>
+
+<% if all_users %>
+<li><%= link_to "Users", users_path %> <span> |</span></li>
+<% end %>
+
+<% if all_boards %>
+<li><%= link_to "All Boards", boards_path %> <span> |</span></li>
+<% end %>
+
+<% if search %>
+<li><%= form_tag images_path, method: "get" do %>
+		<%= label_tag "Find Images:" %>
+		<%= text_field_tag "search" %>
+		<%= submit_tag "Submit", name: nil %>
+	<% end %></li>
+<% end %>

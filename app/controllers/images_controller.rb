@@ -4,6 +4,7 @@ class ImagesController < ApplicationController
 		@images = BingWrapper.search(params[:search])
 		if authenticate
 			@boards = User.find(session[:current_user_id]).boards
+		# need else statement so u can still do an image search while not logged in. Just doesn't display the board menu or checkboxes
 		end
 	end
 
