@@ -49,13 +49,18 @@ a {
     font-size: 18px;
 }
 
+#navbar #profile>img {
+    display: block;
+    max-height: 45px;
+}
+
 #navbar .nav_left {
     float: left;
 }
 
 #navbar .nav_right {
     float: right;
-    margin: 15px 25px;
+    margin: 8px 25px;
 }
 
 /*-------end -------*/
