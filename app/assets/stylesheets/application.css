@@ -20,7 +20,7 @@
 
 body {
 	background: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg");
-	margin: 0 30px;
+	/*margin: 0 30px;*/
 	font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
 }
 
@@ -34,30 +34,61 @@ a {
     color: white;
 }
 
+
+
+/* ------------------------- NAVBAR STYLING ----------------------- */
+
 #navbar {
     background: black;
     height: 100px;
+    width: inherit;
 }
 
-#navbar>a, #navbar>ul span, #navbar label, #navbar h4 {
-        background: black;
-        color: white;
-        margin: 0 10px;
+#navbar h4 {
+    margin: 0;
 }
 
-#navbar>ul span {
-    padding-left: 10px;
+/*----- places the logo and search bar on left side of navbar -----*/
+#navbar .nav_left {
+    float: left;
 }
 
-#profile_link {
-   
+#navbar .nav_right {
+    float: right;
+    margin: 0 25px;
 }
+/*-------end -------*/
+
+#navbar li {
+    display: inline-block;
+    color: white;
+}
+
+#navbar span {
+    color: #f0ff00;
+    font-weight: 700;
+}
+
+#navbar>ul input[type=submit] {
+    text-transform: uppercase;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    padding: 2px 5px;
+}
+
+#search form {
+    margin: 35px 20px;
+    
+}
+
+/*////////////////////////////////////////////////////////////*/
 
 /*#navbar form {
 background: red;
 }*/
 
-#navbar li {
+/*#navbar li {
     float: right;
     margin: 10px 15px;
     list-style-type: none;
@@ -74,7 +105,7 @@ background: red;
     color: white;
     border: 1px solid white;
     padding: 2px 5px;
-}
+}*/
 
 .main_content {
 /*    background: rgba(255, 255, 255, .4);
@@ -101,11 +132,6 @@ background: red;
 /*nav bar won't display on splash page*/
 .nav-sessions>ul>li {
 	display: none;
-}
-
-#logo  {
-    float: left;
-	width: inherit;
 }
 
 /*////////////////////////////////////////////////////////////*/

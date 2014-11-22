@@ -1,36 +1,51 @@
+<<<<<<< HEAD
 <% if welcome %>
 <li><h4>Welcome <%= User.find(session[:current_user_id]).username %></h4>
 	<div class="nav_avatar"><img src="<%= User.find(session[:current_user_id]).avatar %>" id="nav-avatar"> </div>
 	<span id="profile_link"><%= link_to "Profile", user_path(session[:current_user_id]) %></span>
 </li>
 <% end %>
-
-<% if log_in %>
-<li><%= link_to "Log In", login_path %> <span> |</span></li>
+||||||| merged common ancestors
+<% if welcome %>
+<li><h4>Welcome <%= User.find(session[:current_user_id]).username %></h4><span id="profile_link"><%= link_to "Profile", user_path(session[:current_user_id]) %></span></li>
 <% end %>
+=======
+<!-- CLASS NAV RIGHT  -->
+>>>>>>> ecfe074ce980c64962da372230175039dc30c227
 
-<% if log_out %>
-<li><%= link_to "Log Out", sessions_path, method: :delete %> <span> |</span></li>
+
+<% if welcome %>
+<li class="nav_right"><h4>Welcome <%= User.find(session[:current_user_id]).username %></h4><span id="profile_link"><%= link_to "Profile", user_path(session[:current_user_id]) %> | <%= link_to "Log Out", sessions_path, method: :delete %></li>
 <% end %>
 
 <% if sign_up %>
-<li><%= link_to "Sign Up", new_user_path %> <span> |</span></li>
+<li class="nav_right"><%= link_to "Sign Up", new_user_path %></li>
 <% end %>
 
-<% if home %>
-<li><%= link_to "Home", home_path %> <span> |</span></li>
-<% end %>
-
-<% if all_users %>
-<li><%= link_to "Users", users_path %> <span> |</span></li>
+<% if log_in %>
+<li class="nav_right"><%= link_to "Log In", login_path %> <span> |</span></li>
 <% end %>
 
 <% if all_boards %>
-<li><%= link_to "All Boards", boards_path %> <span> |</span></li>
+<li class="nav_right"><%= link_to "All Boards", boards_path %> <span> |</span></li>
+<% end %>
+
+<% if all_users %>
+<li class="nav_right"><%= link_to "Members", users_path %> <span> |</span></li>
+<% end %>
+
+
+<!-- CLASS NAV LEFT  -->
+
+
+<% if home %>
+	<li class="nav_left"><%= link_to home_path do %>
+		<img src="http://i.imgur.com/QwBNW0D.png" id="logo">
+	<% end %></li>
 <% end %>
 
 <% if search %>
-<li><%= form_tag images_path, method: "get" do %>
+<li class="nav_left user_block" id="search"><%= form_tag images_path, method: "get" do %>
 		<%= label_tag "Find Images:" %>
 		<%= text_field_tag "search" %>
 		<%= submit_tag "Submit", name: nil %>
