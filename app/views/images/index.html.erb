@@ -1,14 +1,21 @@
+<div class="main_content">
 <div class="container image">
 	<% if session[:current_user_id] %>
 		<%= form_tag(images_path, :method => "post") do %>			
 			<% @images.each_with_index do |image, index| %>
 				<div class="single image">
-					<%= check_box_tag("selected_images[]" ,"image#{index}") %>
+					Select Image: <%= check_box_tag("selected_images[]" ,"image#{index}") %>
 					<p> Image Title : <%= image[:Title] %> </p>
 					<p> Width : <%= image[:Width] %>, Height : <%= image[:Height] %> </p>
 					<p> File Type : <%= image[:ContentType] %> </p>
 					<img src="<%= image[:MediaUrl] %>">
-					<p> Image URL : <%= image[:MediaUrl] %> </p>
+					<br>
+					<div class="url_box">
+						<b>Image URL :</b>
+						<input type="text" name="url" value="<%= image[:MediaUrl] %>" size="40" readonly>
+					</div>
+
+
 					<%= hidden_field "image#{index}", :title, :value => image[:Title] %>
 					<%= hidden_field "image#{index}", :imgurl, :value => image[:MediaUrl] %>
 					<%= hidden_field "image#{index}", :width, :value => image[:Width] %>

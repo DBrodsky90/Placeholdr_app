@@ -1,11 +1,12 @@
 <div class="main_content">
-	<h1>All Boards - NEED A TITLE FOR THIS VIEW </h1>
+	<h1>Boards</h1>
 
 	<!-- block below says if their is a current session, render the new_board btn -->
+	
 	<% if session[:current_user_id] %>
 		<%= render partial: 'buttons', locals: {new_board: true, edit_board: false, find_image: false, delete: false} %>
 	<% end %>
-
+	
 	<!-- renders a list of all the boards -->
 	<%= render @boards %>
 </div>

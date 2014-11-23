@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 		@user_id = session[:current_user_id]
 		if @user.save
 			session[:current_user_id] = @user.id
-			redirect_to user_path(@user)
+			redirect_to @user
 		else
 			render :new
 		end
