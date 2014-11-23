@@ -1,0 +1,5 @@
+<%= form_tag images_path, method: "get" do %>
+	<%= label_tag "Find Images:" %>
+	<%= text_field_tag "search" %>
+	<%= submit_tag "Submit", :id=>"search_submit" %>
+<% end %>

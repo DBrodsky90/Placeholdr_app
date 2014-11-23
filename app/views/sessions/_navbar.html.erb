@@ -11,11 +11,7 @@
 
 <% if search %>
 	<li class="nav_left" id="search">
-		<%= form_tag images_path, method: "get" do %>
-			<%= label_tag "Find Images:" %>
-			<%= text_field_tag "search" %>
-			<%= submit_tag "Submit", name: nil %>
-		<% end %>
+		<%= render 'home/search' %>
 	</li>
 <% end %>
 

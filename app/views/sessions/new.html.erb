@@ -1,22 +1,22 @@
-<div class="splash">
-	<div class="form" id="signup">
+<div class="form splash" id="signup">
+
+	<h1>Log In</h1>
+
+	<!-- Flash message located in the sessions controller. only appears when user is redirected to this page on logout. tells user they are logged out. -->
+	<% if flash[:logout] %>
+	  <p class="logout"><%= flash[:logout] %></p>
+	<% end %>
 
 
-<h1>Log In</h1>
+	<!-- flash message located in the sessions controller. error message that appears if user enters their login info wrong. -->
+	<% if flash[:login_error] %>
+		<p class="login_error"><%= flash[:login_error] %></p>
+	<% end %>
 
-<!-- Flash message located in the sessions controller. only appears when user is redirected to this page on logout. tells user they are logged out. -->
-<% if flash[:logout] %>
-  <p class="logout"><%= flash[:logout] %></p>
-<% end %>
-
-
-<!-- flash message located in the sessions controller. error message that appears if user enters their login info wrong. -->
-<% if flash[:login_error] %>
-	<p class="login_error"><%= flash[:login_error] %></p>
-<% end %>
-
-		<hr>
-		<%= render 'form' %> 
-		<h3><%= link_to "Continue As Guest", home_path %> | <%= link_to "Sign-Up", new_user_path %><h3>
-	</div>
+	<hr>
+	<%= render 'form' %> 
+	<h3>
+		<%= link_to "Continue As Guest", home_path %> | <%= link_to "Sign-Up", new_user_path %>
+	<h3>
+		
 </div>	

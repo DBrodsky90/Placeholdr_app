@@ -1,13 +1,13 @@
-<div class="main_content">
-<h1>New User</h1>
+<div class="form splash" id="signup">
 
-<!-- shows errors on new form page if form is not filled in with requirements for new user, will not be allowed to create unless required fields are filled -->
-<% if @user.errors.any? %>
-    <h3 style="color:red">Please fix the appropriate fields:</h3>
-<% end %>
+	<h1>New User</h1>
 
-<hr>
+	<!-- shows errors on new form page if form is not filled in with requirements for new user, will not be allowed to create unless required fields are filled -->
+	<% if @user.errors.any? %>
+	    <h3 style="color:red">Please fix the appropriate fields:</h3>
+	<% end %>
 
-<%= render partial: 'form', locals: { new_page: true } %>
+	<hr>
+	<%= render partial: 'form', locals: { new_user: true } %>
 
-</div
+</div>

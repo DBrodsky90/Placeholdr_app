@@ -46,7 +46,7 @@ a {
 }
 
 
-#navbar li{
+#navbar li {
     float:left;
     padding: 0 10px;
     letter-spacing: .1em;
@@ -71,7 +71,7 @@ a {
     margin: 35px 145px 35px 20px;   
 }
 
-#navbar input[type=submit] {
+#navbar #search_submit {
     text-transform: uppercase;
     background: none;
     border: 1px solid white;
@@ -124,42 +124,8 @@ a {
 
 /* ------------------------- MAIN STYLING ----------------------- */
 
-.image img, .images img {
+.image img {
     max-width: 100px;
-}
-
-/*////////////////////////////////////////////////////////////*/
-
-
-/* ------------------------- BOARDS STYLING ----------------------- */
-
-
-.single {
-    background-color: rgba(255,255,255,0.5);
-    border: 2px;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 15px;
-    width: 300px;
-    height: 350px;
-    display: inline-table;
-    position: static;
-}
-
-.boards {
-    border-radius: 50px;
-    max-width: 38px;
-}
-
-.url_box {
-    width: 300px;
-    height: auto; 
-    display: inline;
-}
-
-.board_image {
-    max-width: 250px;
-    max-height: 250px;
 }
 
 /*////////////////////////////////////////////////////////////*/
@@ -208,7 +174,7 @@ a {
     display: block;
 }
 
-#signup #login {
+#signup #submit {
     width: 100%;
     margin-top: 20px;
     padding: 14px 0;
@@ -238,6 +204,17 @@ a {
     color: black;
 }
 
+#signup input[type="radio"]{
+    float: left;
+    margin-right: 7px;
+}
+
+.input>h4 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+
 /*////////////////////////////////////////////////////////////*/
 
 
@@ -248,7 +225,7 @@ a {
 /*////////////////////////////////////////////////////////////*/
 
 /*---signup form---*/
-#signup #login:hover {
+#signup #submit:hover {
     color: black;
     background: #f0ff00;
 }
@@ -264,3 +241,10 @@ a {
     background: #f0ff00;
     color: black;
 }
+
+
+#navbar li>a:hover {
+    background: #f0ff00;
+    color: black;
+/*    font-weight: 700;
+*/}
