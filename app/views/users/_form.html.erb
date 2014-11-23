@@ -1,34 +1,34 @@
 <!-- this form will be used to add a new user and to edit an existing user -->
 <%= form_for @user do |f| %>
   <div class="input">
-    <%= f.label :username %><br>
-    <%= f.text_field :username %><br>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
   </div>
 
   <div class="input">
-    <%= f.label :first_name %><br>
-    <%= f.text_field :first_name %><br>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
  </div>
   
   <div class="input">
-    <%= f.label :last_name %><br>
-    <%= f.text_field :last_name %><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
  </div>
   
   <div class="input">
-    <%= f.label :avatar %><br>
-    <%= f.text_field :avatar %><br>
+    <%= f.label :avatar %>
+    <%= f.text_field :avatar %>
  </div>
   
 <% if new_user %>
   <div class="input">
-    <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
  </div>
   
   <div class="input">
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %><br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
   </div>
 <% end %>
 

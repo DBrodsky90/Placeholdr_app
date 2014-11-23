@@ -241,10 +241,3 @@ a {
     background: #f0ff00;
     color: black;
 }
-
-
-#navbar li>a:hover {
-    background: #f0ff00;
-    color: black;
-/*    font-weight: 700;
-*/}
