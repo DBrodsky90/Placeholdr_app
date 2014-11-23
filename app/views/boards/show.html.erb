@@ -19,11 +19,11 @@
 	</p>
 
 <% if session[:current_user_id] == @board.user.id %>
-		<%= form_tag(images_path, :method => "delete") do %>
-			<% @board.images.each_with_index do |image, index| %> 
+		<%= form_tag(image_path, :method => "delete") do %>
+			<% @board.images.each do |image| %> 
 				<div class="single board">
 					<br>
-					Select Image: <%= check_box_tag("selected_images[]", "image#{index}") %>
+					Select Image: <%= check_box_tag("selected_images[]", image.id) %>
 					<br><br>
 					<!-- makes the image a link to that images image show page -->
 					<%= link_to(image_path(image)) do %>
@@ -33,12 +33,12 @@
 					<div class="url_box">
 					<b>Copy Image URL:</b>
 						<input type="text" name="url" value="<%= image.imgurl %>" size="30" readonly>
+						<%= hidden_field image.id, :value => image.id %>
 					</div>
 					<br><br>
-					<%= hidden_field "image#{index}", :value => image.id %>
 				</div>
 			<% end %>
-			<%= submit_tag "Delete Selected Songs" %>
+			<%= button_tag "Delete Selected Images" %>
 		<% end %>
 	<% else %>
 	<!-- code block adds the images that belong to that specific board to the show view  -->

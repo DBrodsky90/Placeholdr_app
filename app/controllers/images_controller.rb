@@ -20,10 +20,13 @@ class ImagesController < ApplicationController
 		redirect_to board_path(board)
 	end
 
-	def delete
-		@image = Image.find(params[:id])
-		@image.destroy
-		redirect_to images_path
+	def destroy
+		board = Board.find(params[:id])
+		params["selected_images"].each do |image|
+			img = Image.find(image)
+			img.destroy
+		end
+		redirect_to board_path(board)
 	end
 
 	private
