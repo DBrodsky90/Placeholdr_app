@@ -8,9 +8,9 @@
 </head>
 <body>
 <!-- class is set to that value because you want the class of the navbar to = what page the user is on -->
-<nav class='nav-<%= params[:controller]%>' id="navbar">
+<nav id='nav-<%= params[:controller]%>'>
 	<!-- <img src="http://i.imgur.com/QwBNW0D.png" id="logo"> -->
-	<ul>
+	<ul id="navbar">
 		<% if session[:current_user_id] %>
 			<%= render partial: 'sessions/navbar', locals: { welcome: true, profile: true, log_in: false, sign_up: false, home: true, all_users: true, all_boards: true, search: true } %>
 		<% else %>

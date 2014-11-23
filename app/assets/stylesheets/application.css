@@ -41,8 +41,54 @@ a {
 #navbar {
     background: black;
     height: 100px;
-    width: inherit;
+    margin:0; 
+    color: white;   
 }
+
+
+#navbar li{
+    float:left;
+    padding: 0 10px;
+    letter-spacing: .1em;
+    list-style-type: none;
+}
+
+#navbar .nav_left {
+    float: left;
+}
+
+#navbar .nav_right {
+    position: relative;
+    top: 75px;
+}
+
+#navbar #profile {
+    position: relative;
+    top: 56px;
+}
+
+#navbar #search form {
+    margin: 35px 145px 35px 20px;   
+}
+
+#navbar input[type=submit] {
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid white;
+    padding: 2px 5px;
+}
+
+#thumb_avatar {
+    max-height: 75px;
+    position: relative;
+    top: 15px;
+}
+
+#navbar .divider, #navbar #divider span  {
+    color: #f0ff00;
+}
+
+/*
 
 #navbar h4 {
     margin: 0;
@@ -54,9 +100,7 @@ a {
     max-height: 45px;
 }
 
-#navbar .nav_left {
-    float: left;
-}
+
 
 #navbar .nav_right {
     float: right;
@@ -65,7 +109,7 @@ a {
 
 /*-------end -------*/
 
-#navbar li {
+/*#navbar li {
     display: inline-block;
     color: white;
 }
@@ -79,75 +123,35 @@ a {
     background: green;
 }
 
-#navbar>ul input[type=submit] {
-    text-transform: uppercase;
-    background: none;
-    color: white;
-    border: 1px solid white;
-    padding: 2px 5px;
-}
 
-#search form {
-    margin: 35px 20px;
-    
-}
 
 #navbar #profile_link {
     text-align: center;
     text-transform: uppercase;
     font-weight: 300;
-}
+}*/
 
 /*////////////////////////////////////////////////////////////*/
-
-/*#navbar form {
-background: red;
-}*/
-
-/*#navbar li {
-    float: right;
-    margin: 10px 15px;
-    list-style-type: none;
-}
-
-#navbar>ul label {
-    text-transform: uppercase;
-    padding: 2px;
-}
-
-#navbar>ul input[type=submit] {
-    text-transform: uppercase;
-    background: none;
-    color: white;
-    border: 1px solid white;
-    padding: 2px 5px;
-}*/
 
 .main_content {
-/*    background: rgba(255, 255, 255, .4);
-*/
-  /*  background: white;*/
+    text-align: center;
+    margin-top: 170px;
 }
-
-.nav_avatar{
-    max-width: 50px;
-    max-height: 50px;
-}
-.nav_avatar img{
-    width: 100%;
-    height: auto;
-}
-
 
 /*////////////////////////////////////////////////////////////*/
 
 
 
-/* ------------------------- SPLASH SPECIFIC STYLING ----------------------- */
+/* ------------------------- TO EXCLUDE THINGS FROM NAVBAR ----------------------- */
 
 /*nav bar won't display on splash page*/
-.nav-sessions>ul>li {
+#nav-sessions>#navbar .nav_right, #nav-sessions>#navbar #search, #nav-sessions>#navbar .divider {
 	display: none;
+}
+
+/*Search bar won't display on images page*/
+.nav-images #search {
+    display: none;
 }
 
 /*////////////////////////////////////////////////////////////*/
