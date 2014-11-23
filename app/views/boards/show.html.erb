@@ -11,18 +11,30 @@
 		<% else %>
 			<%= @board.name %> This Board is private.
 		<% end %>
+		
+	<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
+	<% if @board.user == @current_user %>
+		<%= render partial: 'buttons', locals: {new_board: false, edit_board: true,  find_image: true, delete: true} %><br>
+	<% end %>
 	</p>
 
 <% if session[:current_user_id] == @board.user.id %>
 		<%= form_tag(images_path, :method => "post") do %>
 			<% @board.images.each_with_index do |image, index| %> 
 				<div class="single board">
-					<%= check_box_tag("selected_images[]", "image#{index}") %>
+					<br>
+					Select Image: <%= check_box_tag("selected_images[]", "image#{index}") %>
+					<br><br>
 					<!-- makes the image a link to that images image show page -->
 					<%= link_to(image_path(image)) do %>
-						<img src="<%= image.imgurl %>">
+						<img class="board_image" src="<%= image.imgurl %>">
 					<% end %>
-					<%= image.imgurl %>
+					<br><br>
+					<div class="url_box">
+					<b>Copy Image URL:</b>
+						<input type="text" name="url" value="<%= image.imgurl %>" size="30" readonly>
+					</div>
+					<br><br>
 					<%= hidden_field "image#{index}", :value => image.id %>
 				</div>
 			<% end %>
@@ -41,8 +53,4 @@
 <% end %>
 	<br>
 
-	<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
-	<% if @board.user == @current_user %>
-		<%= render partial: 'buttons', locals: {new_board: false, edit_board: true,  find_image: true, delete: true} %><br>
-	<% end %>
 </div>
