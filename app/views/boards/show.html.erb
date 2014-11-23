@@ -13,6 +13,21 @@
 		<% end %>
 	</p>
 
+<% if session[:current_user_id] == @board.user.id %>
+		<%= form_tag(images_path, :method => "post") do %>
+			<% @board.images.each_with_index do |image, index| %> 
+				<div class="single board">
+					<%= check_box_tag("selected_images[]", "image#{index}") %>
+					<!-- makes the image a link to that images image show page -->
+					<%= link_to(image_path(image)) do %>
+						<img src="<%= image.imgurl %>">
+					<% end %>
+					<%= image.imgurl %>
+					<%= hidden_field "image#{index}", :value => image.id %>
+				</div>
+			<% end %>
+		<% end %>
+	<% else %>
 	<!-- code block adds the images that belong to that specific board to the show view  -->
 	<% @board.images.each do |image| %> 
 		<div class="single board">
@@ -23,6 +38,7 @@
 			<%= image.imgurl %>
 		</div>
 	<% end %>
+<% end %>
 	<br>
 
 	<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
