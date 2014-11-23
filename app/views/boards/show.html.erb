@@ -19,7 +19,7 @@
 	</p>
 
 <% if session[:current_user_id] == @board.user.id %>
-		<%= form_tag(images_path, :method => "post") do %>
+		<%= form_tag(images_path, :method => "delete") do %>
 			<% @board.images.each_with_index do |image, index| %> 
 				<div class="single board">
 					<br>
@@ -38,6 +38,7 @@
 					<%= hidden_field "image#{index}", :value => image.id %>
 				</div>
 			<% end %>
+			<%= submit_tag "Delete Selected Songs" %>
 		<% end %>
 	<% else %>
 	<!-- code block adds the images that belong to that specific board to the show view  -->
