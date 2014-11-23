@@ -78,6 +78,10 @@ a {
     padding: 2px 5px;
 }
 
+#navbar input[type=text] {
+    color: black;
+}
+
 #thumb_avatar {
     max-height: 75px;
     position: relative;
@@ -88,48 +92,6 @@ a {
     color: #f0ff00;
 }
 
-/*
-
-#navbar h4 {
-    margin: 0;
-    font-size: 18px;
-}
-
-#navbar #profile>img {
-    display: block;
-    max-height: 45px;
-}
-
-
-
-#navbar .nav_right {
-    float: right;
-    margin: 8px 25px;
-}
-
-/*-------end -------*/
-
-/*#navbar li {
-    display: inline-block;
-    color: white;
-}
-
-#navbar span {
-    color: #f0ff00;
-    font-weight: 700;
-}
-
-#navbard span {
-    background: green;
-}
-
-
-
-#navbar #profile_link {
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 300;
-}*/
 
 /*////////////////////////////////////////////////////////////*/
 
@@ -150,7 +112,7 @@ a {
 }
 
 /*Search bar won't display on images page*/
-.nav-images #search {
+#nav-home>#navbar #search {
     display: none;
 }
 
@@ -162,6 +124,9 @@ a {
 
 /* ------------------------- MAIN STYLING ----------------------- */
 
+.image img, .images img {
+    max-width: 100px;
+}
 
 /*////////////////////////////////////////////////////////////*/
 
