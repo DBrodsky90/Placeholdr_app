@@ -1,38 +1,3 @@
-<!-- CLASS NAV RIGHT  -->
-
-<% if welcome %>
-	<li class="nav_right" id="profile">
-		<img src="<%= User.find(session[:current_user_id]).avatar %>">
-		<h4>Welcome <%= User.find(session[:current_user_id]).username %></h4>
-		<span><%= link_to "Profile", user_path(session[:current_user_id]) %> | <%= link_to "Log Out", sessions_path, method: :delete %></span>
-	</li>
-<% end %>
-
-<% if log_in %>
-	<li class="nav_right">
-		<%= link_to "Log In", login_path %>
-	</li>
-<% end %>
-
-<% if sign_up %>
-	<li class="nav_right">
-		<%= link_to "Sign Up", new_user_path %> <span> | </span>
-	</li>
-<% end %>
-
-<% if all_boards %>
-	<li class="nav_right">
-		<%= link_to "All Boards", boards_path %> <span> | </span>
-	</li>
-<% end %>
-
-<% if all_users %>
-	<li class="nav_right">
-		<%= link_to "Members", users_path %> <span> | </span>
-	</li>
-<% end %>
-
-
 <!-- CLASS NAV LEFT  -->
 
 
@@ -45,9 +10,45 @@
 <% end %>
 
 <% if search %>
-<li class="nav_left user_block" id="search"><%= form_tag images_path, method: "get" do %>
-		<%= label_tag "Find Images:" %>
-		<%= text_field_tag "search" %>
-		<%= submit_tag "Submit", name: nil %>
-	<% end %></li>
+	<li class="nav_left" id="search">
+		<%= form_tag images_path, method: "get" do %>
+			<%= label_tag "Find Images:" %>
+			<%= text_field_tag "search" %>
+			<%= submit_tag "Submit", name: nil %>
+		<% end %>
+	</li>
+<% end %>
+
+<!-- CLASS NAV RIGHT  -->
+
+<% if all_boards %>
+	<li class="nav_right">
+		<%= link_to "All Boards", boards_path %></li><li class="divider nav_right">|</li>
+	</li>
+<% end %>
+
+<% if all_users %>
+	<li class="nav_right">
+		<%= link_to "Members", users_path %></li><li class="divider nav_right">|</li>
+	</li>
+<% end %>
+
+<% if welcome %>
+	<li class="nav_right" id="profile">
+		<span>Welcome <%= User.find(session[:current_user_id]).username %></span><br>
+		<%= link_to "Profile", user_path(session[:current_user_id]) %> <span class="divider" id="divider">|</span> <%= link_to "Log Out", sessions_path, method: :delete %>
+	</li>
+	<li><img src="<%= User.find(session[:current_user_id]).avatar %>" id="thumb_avatar"></li>
+<% end %>
+
+<% if sign_up %>
+	<li class="nav_right">
+		<%= link_to "Sign Up", new_user_path %></li><li class="divider">|</li>
+	</li>
+<% end %>
+
+<% if log_in %>
+	<li class="nav_right">
+		<%= link_to "Log In", login_path %>
+	</li>
 <% end %>

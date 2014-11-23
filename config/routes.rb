@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # root 'splash#index'
   root 'sessions#new'
 
 
