@@ -18,7 +18,7 @@
 		<div class="button_block">
 				<%= render partial: 'buttons', locals: {buttons: [:edit_board, :find_image, :delete_board]} %>
 		</div>
-	
+
 		<div id="images_block">
 					<%= form_tag(image_path, :method => "delete") do %>
 						<% @board.images.each do |image| %> 
