@@ -151,7 +151,7 @@ a {
     margin: 175px auto;
 }*/
 
-.boards {
+.all_boards {
     padding: 0px 25px 25px;
     background: black;
     margin: 200px auto;
@@ -166,17 +166,17 @@ a {
     position: static;
 }
 
-.boards #search_submit {
+.all_boards #search_submit {
     border: 2px solid yellow;
 }
 
-.boards h4 {
+.all_boards h4 {
     letter-spacing: 1.5px;
     font-weight: 400;
     text-transform: uppercase;
 }
 
-.boards p {
+.all_boards p {
     margin-top: -20px;
     letter-spacing: 1px;
     font-weight: 100;
@@ -281,14 +281,13 @@ a {
 /*------------------- EVENT HANDLERS --------------------*/
 /*////////////////////////////////////////////////////////////*/
 
-#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover {
+#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  #search_submit:hover {
     color: black;
     background: #f0ff00;
 }
 
-.board>h4 a:hover {
+.all_boards>h4 a:hover {
     color: #f0ff00;
-
 }
 
 /*---nav bar styling---*/
@@ -297,5 +296,3 @@ a {
     background: #f0ff00;
     color: black;
 }
-
-

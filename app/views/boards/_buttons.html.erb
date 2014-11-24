@@ -3,13 +3,13 @@
 <% end %>
 
 <% if edit_board %>
-	<%= button_to "Edit Board Information", edit_board_path, method: :get %>
+	<%= button_to "Edit Board Information", edit_board_path, :id=>"search_submit", method: :get %>
 <% end %>
 
 <% if find_image %>
-	<%= button_to "Find More Images", home_path, method: :get %>
+	<%= button_to "Find More Images", home_path, :id=>"search_submit", method: :get %>
 <% end %>
 
 <% if delete %>
-	<%= button_to "Delete Board", board_path, method: :delete %>
+	<%= button_to "Delete Board", board_path, :id=>"search_submit", method: :delete %>
 <% end %>
