@@ -16,7 +16,7 @@
 
 /* ------------------------- GLOBAL STYLING ----------------------- */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
 
 body {
 	background: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg");
@@ -71,11 +71,14 @@ a {
     margin: 35px 145px 35px 20px;   
 }
 
-#navbar #search_submit {
-    text-transform: uppercase;
-    background: none;
+#search_submit {
+    padding: 2px 10px;
+    background: black;
     border: 1px solid white;
-    padding: 2px 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 2px;
 }
 
 #navbar input[type=text] {
@@ -90,14 +93,6 @@ a {
 
 #navbar .divider, #navbar #divider span  {
     color: #f0ff00;
-}
-
-
-/*////////////////////////////////////////////////////////////*/
-
-.main_content {
-    text-align: center;
-    margin-top: 170px;
 }
 
 /*////////////////////////////////////////////////////////////*/
@@ -124,8 +119,27 @@ a {
 
 /* ------------------------- MAIN STYLING ----------------------- */
 
+.main_content {
+    text-align: center;
+    margin-top: 170px;
+}
+
 .image img {
     max-width: 100px;
+}
+
+
+.search {
+    background: black;
+    display: inline-block;
+    padding: 5px 5px;
+    margin: 305px auto;
+}
+.search label {
+    background: black;
+    font-weight: 300; 
+    letter-spacing: 1.5px;
+    color: #f0ff00;
 }
 
 /*////////////////////////////////////////////////////////////*/
