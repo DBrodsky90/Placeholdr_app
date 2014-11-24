@@ -12,43 +12,42 @@
 		<% end %>
 	</p>
 	<hr>
-	<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
-	<div class="button_block">
-		<% if @board.user == current_user %>
+
+	<% if @board.user == current_user %>
+		<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
+		<div class="button_block">
 				<%= render partial: 'buttons', locals: {buttons: [:edit_board, :find_image, :delete_board]} %>
-		<% end %>
-	</div>
+		</div>
 	
-	<div id="images_block">
-		<% if @board.user == current_user %>
-				<%= form_tag(image_path, :method => "delete") do %>
-					<% @board.images.each do |image| %> 
-						<div class="image">
-							Select Image: <%= check_box_tag("selected_images[]", image.id) %>
-							<!-- makes the image a link to that images image show page -->
-							<%= link_to(image_path(image)) do %>
-								<img src="<%= image.imgurl %>" class="single_image"><br>
-							<% end %>
-							<div class="url_container">
-								Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" size="30" readonly>
-								<%= hidden_field image.id, :value => image.id %>	
+		<div id="images_block">
+					<%= form_tag(image_path, :method => "delete") do %>
+						<% @board.images.each do |image| %> 
+							<div class="image">
+								Select Image: <%= check_box_tag("selected_images[]", image.id) %>
+								<!-- makes the image a link to that images image show page -->
+								<%= link_to(image_path(image)) do %>
+									<img src="<%= image.imgurl %>" class="single_image"><br>
+								<% end %>
+								<div class="url_container">
+									Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" size="30" readonly>
+									<%= hidden_field image.id, :value => image.id %>	
+								</div>
 							</div>
-						</div>
+						<% end %>
+						<hr>
+						<% if @board.images.count > 0 %>
+							<%= button_tag "Delete Selected Images", :id=>"search_submit" %>
+						<% end %>
 					<% end %>
-					<hr>
-					<% if @board.images.count > 0 %>
-						<%= button_tag "Delete Selected Images", :id=>"search_submit" %>
+			<% else %>
+				<!-- code block adds the images that belong to that specific board to the show view  -->
+				<% @board.images.each do |image| %> 
+					<!-- makes the image a link to that images image show page -->
+					<%= link_to(image_path(image)) do %>
+							<img src="<%= image.imgurl %>">
 					<% end %>
+					<%= image.imgurl %>	
 				<% end %>
-		<% else %>
-			<!-- code block adds the images that belong to that specific board to the show view  -->
-			<% @board.images.each do |image| %> 
-				<!-- makes the image a link to that images image show page -->
-				<%= link_to(image_path(image)) do %>
-						<img src="<%= image.imgurl %>">
-				<% end %>
-				<%= image.imgurl %>	
-			<% end %>
-		<% end %>
-	</div>
+		</div>
+	<% end %>
 </div>

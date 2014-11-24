@@ -219,6 +219,10 @@ a {
     width: 500px; 
     margin: 0 auto;
 }
+
+.bio a {
+    color: black;
+}
 /*.user .all_boards {
     border-radius: 0;
     box-shadow: none;
