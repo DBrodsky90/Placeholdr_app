@@ -2,16 +2,13 @@
 	<h2><%= user.username %></h2>
 	<p>
 		<img src="<%= user.avatar %>">
-	<br>
 	</p>
 
 <!-- on users/show if user is logged in there is a link on their show page to edit their user info, this is only allowed for the current user -->
 		<% if user == @current_user %>
-		<hr>
 			<%= link_to "Edit User", edit_user_path(user) %>
 		<% end %>
 <!-- on users/index this link will allow you to view a specific users show page -->
 	<% if index_page %>
-	<hr>
 	  <%= link_to "View User", user_path(user) %>
 	 <% end %>

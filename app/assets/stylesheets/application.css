@@ -177,7 +177,7 @@ a {
     font-weight: 100;
 }
 
-.board_show {
+.board_show, .bio {
     background: white;
     border-radius: 0;
     box-shadow: none;
@@ -215,6 +215,16 @@ a {
     margin-top: 10px;
 }
 
+.bio {
+    width: 500px; 
+    margin: 0 auto;
+}
+/*.user .all_boards {
+    border-radius: 0;
+    box-shadow: none;
+    margin-top: 0;
+    width: 500px;    
+}*/
 /*////////////////////////////////////////////////////////////*/
 
 /*-----------------FORM STYLING GOES HERE--------------------*/
