@@ -33,6 +33,8 @@ gem 'spring',        group: :development
 
 gem 'pry-rails', group: :development
 
+gem 'miro'
+
 group :development do
   gem 'rspec-rails'
   gem 'rspec-collection_matchers'

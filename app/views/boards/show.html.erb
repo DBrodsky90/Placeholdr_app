@@ -31,7 +31,14 @@
 								<div class="url_container">
 									Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" size="30" readonly>
 									<%= hidden_field image.id, :value => image.id %>	
-								</div>
+								</div>	
+								<div>
+									Images dominant colors
+										<% img = Miro::DominantColors.new("#{image.imgurl}").to_hex %>
+										<% img.each do |color| %>
+											<div style="background-color: <%= color %> "> <%= color %> </div> 
+										<% end %>
+								</div>							
 							</div>
 						<% end %>
 						<hr>
