@@ -12,7 +12,7 @@
 					<br>
 					<div class="url_box">
 						<b>Image URL :</b>
-						<input type="text" name="url" value="<%= image[:MediaUrl] %>" size="40" readonly>
+						<input type="text" name="url" value="<%= BitlyWrapper.short(image[:MediaUrl]) %>" readonly>
 					</div>
 
 
@@ -33,6 +33,10 @@
 				<p> Width : <%= image[:Width] %>, Height : <%= image[:Height] %> </p>
 				<p> File Type : <%= image[:ContentType] %> </p>
 				<img src="<%= image[:MediaUrl] %>">
+				<div class="url_box">
+						<b>Image URL :</b>
+						<input type="text" name="url" value="<%= BitlyWrapper.short(image[:MediaUrl]) %>" readonly>
+				</div>
 			</div>
 		<% end %>
 	<% end %>
