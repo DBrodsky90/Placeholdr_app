@@ -10,6 +10,13 @@
 					<b>Copy Image URL:</b>
 						<input type="text" name="url" value="<%= @short_url %>" readonly>
 				</div>
+				<div>
+					Image's dominant colors
+						<% img = Miro::DominantColors.new("#{@image.imgurl}").to_hex %>
+						<% img.each do |color| %>
+							<div style="background-color: <%= color %> "> <%= color %> </div> 
+						<% end %>
+				</div>	
 		</div>
 	</div>
 </div>
