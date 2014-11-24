@@ -53,7 +53,10 @@
 					<%= link_to(image_path(image)) do %>
 							<img src="<%= image.imgurl %>">
 					<% end %>
-					<%= BitlyWrapper.short(image.imgurl) %>	
+					<div class="url_container">
+									Copy Image URL: <input type="text" name="url" value="<%= BitlyWrapper.short(image.imgurl) %>" readonly>
+									<%= hidden_field image.id, :value => image.id %>	
+					</div>	
 				<% end %>
 		</div>
 	<% end %>
