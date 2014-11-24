@@ -68,6 +68,17 @@ class BoardsController < ApplicationController
 		redirect_to board_path(board)
 	end
 
+	def random
+		@board = Board.find(params[:id])
+		@urls = @board.images.map do |image|
+			image.imgurl
+		end
+		@url = @urls.sample
+		@cloud_url = Cloudinary::Uploader.upload(@url, :width => params[:width], :height => params[:height], :crop => :fill)["url"]
+		send_data open(@cloud_url).read
+	end
+
+
 	private
 
 	def board_params
