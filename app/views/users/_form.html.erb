@@ -32,5 +32,11 @@
   </div>
 <% end %>
 
-  <%= f.submit "Create User", :id=>"submit" %>
+<% if delete %>
+  <div class="input" id="delete">
+    <%= link_to "Delete User", user_path(@user), method: :delete %>
+  </div>
+<% end %>
+
+  <%= f.submit "Submit", :id=>"submit" %>
 <% end %>

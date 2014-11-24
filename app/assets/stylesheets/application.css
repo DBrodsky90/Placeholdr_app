@@ -214,6 +214,10 @@ a {
     margin-bottom: 12px;
 }
 
+#signup #delete>a {
+/*    text-decoration: underline;
+*/    color: black;
+}
 
 /*////////////////////////////////////////////////////////////*/
 
@@ -230,7 +234,7 @@ a {
     background: #f0ff00;
 }
 
-#signup h3>a:hover {
+#signup h3>a:hover, #signup #delete>a:hover {
     color: black;
     background: #f0ff00;
 }

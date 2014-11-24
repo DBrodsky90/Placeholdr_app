@@ -1,7 +1,7 @@
-<div class="main_content">
+<div class="form splash" id="signup">
 
 	<h1>Edit User</h1>
-
+	<hr>
 	<!-- this will show an error on edit form page if the form is not filled in with the requirements for user -->
 
 	<% if @user.errors.any? %>
@@ -10,13 +10,8 @@
 	  </div>
 	<% end %>
 
-	<hr>
-
 	<!-- shows user edit form -->
-	<%= render partial: 'form', locals: { new_user: false } %>
-
-	<!-- delete user -->
-	<%= button_to "Delete", user_path(@user), method: :delete %>
+	<%= render partial: 'form', locals: { new_user: false, delete: true } %>
 
 </div>
 
