@@ -2,6 +2,9 @@ class ImagesController < ApplicationController
 
 	def index
 		@images = BingWrapper.search(params[:search])
+		@short_urls = @images.map do |image|
+			BitlyWrapper.short(image[:MediaUrl])
+		end
 		if session[:current_user_id]
 			@boards = User.find(session[:current_user_id]).boards
 		end
@@ -9,6 +12,7 @@ class ImagesController < ApplicationController
 
 	def show
 		@image = Image.find(params[:id])
+		@short_url = BitlyWrapper.short(@image.imgurl)
 	end
 
 	def create
