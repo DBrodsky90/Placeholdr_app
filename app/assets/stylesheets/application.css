@@ -146,7 +146,7 @@ a {
     margin: 175px auto;
 }*/
 
-.all_boards, .board_show {
+.all_boards {
     padding: 0px 25px 25px;
     background: black;
     margin: 200px auto;
@@ -177,7 +177,7 @@ a {
     font-weight: 100;
 }
 
-.board_show, .bio {
+.board_show, .user {
     background: white;
     border-radius: 0;
     box-shadow: none;
@@ -216,19 +216,57 @@ a {
 }
 
 .bio {
-    width: 500px; 
     margin: 0 auto;
+    padding-bottom: 10px;
+    background: black;
+    color: white;
 }
 
-.bio a {
+.bio>h1, .bio>a {
+    padding-top: 15px;
+}
+
+.cork_boards {
+    padding-bottom: 15px;
+}
+
+.cork_boards>h4>a, .cork_boards>p {
+    margin-top: -20px;
     color: black;
 }
-/*.user .all_boards {
-    border-radius: 0;
-    box-shadow: none;
-    margin-top: 0;
-    width: 500px;    
-}*/
+
+
+.user, .board_show  {
+    width: 750px;
+    margin: 200px auto;
+}
+
+.members>h1{
+        margin: 0;
+        text-transform: uppercase;
+        font-size: 2em;
+        letter-spacing: .5pt;
+        text-align: center;
+}
+
+.members {
+    background: white;
+    width: 1000px;
+    margin: 200px auto;
+}
+
+.members .single {
+    display: inline-block;
+    margin: 25px 10px;
+}
+
+.single img {
+    margin: 0 10px;
+}
+
+.single>a {
+    color: black;
+}
 /*////////////////////////////////////////////////////////////*/
 
 /*-----------------FORM STYLING GOES HERE--------------------*/

@@ -1,11 +1,13 @@
-<div class="main_content board_show">
+<div class="main_content members">
 
 <h1>Members</h1>
 
+<div id="group">
 <% @users.each do |user| %>
-	<div class="single user">
-		<%= render partial: 'user', locals: {user: user, index_page: true} %>
+	<div class="single">
+		<%= render partial: 'user', locals: {user: user, user_page: [:index_page]} %>
 	</div>
 <% end %>
+</div>
 
 </div>
