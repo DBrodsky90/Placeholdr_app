@@ -1,10 +1,10 @@
 <div class="main_content user">
 	<div class="bio">
-		<h1>My Profile </h>
+		<h1>Profile </h>
 		<%= render partial: 'user', locals: {user: @user, index_page: false} %>
 
 <!-- displays all boards for this specific user -->
-		<h1><%= @user.username%>'s Cork Boards</h1>
+		<h1>My Cork Boards</h1>
 			<% @user.boards.each do |board| %>
 				<%= render partial: '/boards/board', locals: {board: board} %>
 			<% end %>

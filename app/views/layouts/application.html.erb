@@ -12,9 +12,9 @@
 	<!-- <img src="http://i.imgur.com/QwBNW0D.png" id="logo"> -->
 	<ul id="navbar">
 		<% if session[:current_user_id] %>
-			<%= render partial: 'sessions/navbar', locals: { welcome: true, profile: true, log_in: false, sign_up: false, home: true, all_users: true, all_boards: true, search: true } %>
+			<%= render partial: 'sessions/navbar', locals: { navbar: [:welcome, :profile, :home, :all_users, :all_boards, :search] } %>
 		<% else %>
-			<%= render partial: 'sessions/navbar', locals: { welcome: false, profile: false, log_in: true, sign_up: true, home: true, all_users: false, all_boards: true, search: true } %>
+			<%= render partial: 'sessions/navbar', locals: { navbar: [:log_in, :sign_up, :home, :all_boards, :search] } %>
 		<% end %>
 	</ul>
 </nav>
