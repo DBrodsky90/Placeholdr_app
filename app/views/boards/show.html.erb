@@ -38,7 +38,9 @@
 					<br><br>
 				</div>
 			<% end %>
-			<%= button_tag "Delete Selected Images" %>
+			<% if @board.images.count > 0 %>
+				<%= button_tag "Delete Selected Images" %>
+			<% end %>
 		<% end %>
 	<% else %>
 	<!-- code block adds the images that belong to that specific board to the show view  -->
