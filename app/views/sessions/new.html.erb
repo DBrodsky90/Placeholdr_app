@@ -13,6 +13,10 @@
 		<p class="login_error"><%= flash[:login_error] %></p>
 	<% end %>
 
+	<% if flash[:new_board_error] %>
+		<p class="new_board_error"><%= flash[:new_board_error] %></p>
+	<% end %>
+
 	<hr>
 	<%= render 'form' %> 
 	<h3>

@@ -4,17 +4,22 @@ class BoardsController < ApplicationController
 
 	def index
 		@boards = Board.all
-		@user = current_user
+		# @user = current_user
 	end
 
 	def show
 		@board = Board.find(params[:id])
 		@user = User.find(params[:id])
-		@current_user = current_user
+		# @current_user = current_user
 	end
 
 	def new 
-		@board = Board.new
+		if session[:current_user_id]
+			@board = Board.new
+		else
+			redirect_to login_path
+			flash[:new_board_error] = "Please login or signup in order to create a new board."
+		end
 	end
 
 	def create
