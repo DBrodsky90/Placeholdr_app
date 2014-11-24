@@ -14,13 +14,13 @@
 	<hr>
 	<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
 	<div class="button_block">
-		<% if @board.user == @current_user %>
-				<%= render partial: 'buttons', locals: {new_board: false, edit_board: true,  find_image: true, delete: true} %>
+		<% if @board.user == current_user %>
+				<%= render partial: 'buttons', locals: {buttons: [:edit_board, :find_image, :delete_board]} %>
 		<% end %>
 	</div>
 	
 	<div id="images_block">
-		<% if session[:current_user_id] == @board.user.id %>
+		<% if @board.user == current_user %>
 				<%= form_tag(image_path, :method => "delete") do %>
 					<% @board.images.each do |image| %> 
 						<div class="image">

@@ -31,7 +31,7 @@
 
 <% if welcome %>
 	<li class="nav_right" id="profile">
-		<span>Welcome <%= User.find(session[:current_user_id]).username %></span><br>
+		<span>Welcome <%= current_user.username %></span><br>
 		<%= link_to "Profile", user_path(session[:current_user_id]) %> <span class="divider" id="divider">|</span> <%= link_to "Log Out", sessions_path, method: :delete %>
 	</li>
 	<li><img src="<%= User.find(session[:current_user_id]).avatar %>" id="thumb_avatar"></li>
