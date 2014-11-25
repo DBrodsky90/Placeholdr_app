@@ -50,10 +50,14 @@ a {
     float: right;
 }
 
-#nav-home, #nav-images, #nav-boards, #nav-users {
-    width: 100%;
+header {
     background: black;
     height: 100px;
+}
+
+#nav-home, #nav-images, #nav-boards, #nav-users {
+    width: 100%;
+
 }
 
 #navbar {
@@ -128,7 +132,6 @@ a {
 #nav-sessions>#navbar .nav_right, #nav-sessions>#navbar #search, #nav-sessions>#navbar .divider {
   display: none;
 }
-
 /*Search bar won't display on images page*/
 #nav-home>#navbar #search {
     display: none;
@@ -291,6 +294,62 @@ a {
     padding-bottom: 50px;
 }
 
+.board_show #board_info {
+    width: 100%;
+    margin: 15px;
+    padding-top: 3px;
+}
+
+.board_show .button_block input[type=submit] {
+    float: left;
+}
+
+.board_show .button_block {
+    display: inline-block;  
+}
+
+.buttons_left {
+    margin: 10px 0 20px 20px;
+    float: left;
+}
+
+#instructions p, #instructions h2 {
+    padding: 3px;
+    margin: 15px 10% 10px 10%;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#instructions h2 {
+    display: inline-block;
+    border: 2px solid black;
+    padding-left: 0;
+}
+
+#instructions h2 span:not(.measurement) {
+    letter-spacing: 2px;
+    padding: 5px;
+    padding-right: 2px;
+    background: black;
+    color: white;
+    font-weight: 400;
+}
+
+#instructions h2 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.measurement {
+    color: red;
+}
+
+#instructions {
+    margin-bottom: 20px;
+}
+
+
 .main_content.images>h1 {
     margin-bottom: 45px;
 }
@@ -318,7 +377,6 @@ a {
     margin-bottom: 25px;
     width: 90%;
     border: 1px solid rgba(255, 255, 255, .2);
-;
 }
 
 .right>p, .image_info {
@@ -436,7 +494,16 @@ a {
 .board_show .search_submit>input[type=submit] {
     display: block;
 }
-/*CHECK TO MAKE SURE BELOW DOESN"T CONFLICT WHAT"S ALREADY DONE*/
+
+.main_content.board_show hr {
+    margin: 0 auto; 
+}
+
+.boards_right {
+    float: right;
+    padding-right: 60px;
+    margin-top: 4px;
+}
 
 .board_single_image {
     max-height: 150px;
@@ -462,7 +529,6 @@ a {
     letter-spacing: 2px;
     font-weight: 400;
 }
-
 
 /*////////////////////////////////////////////////////////////*/
 
