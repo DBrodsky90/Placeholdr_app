@@ -2,6 +2,16 @@
 ![logo](http://i.imgur.com/X9WVOuG.png?1)  
 Heroku Link: https://placeholdr-app.herokuapp.com/  
 
+##Table of Contents  
+1. Creators  
+2. Technologies  
+3. ERD  
+4. Overview  
+5. Routes  
+6. User Stories - How to use Placeholdr  
+[Copyright](https://github.com/DBrodsky90/Placeholdr_app/blob/master/README.md/Copyright)7. Copyright  
+
+
 ###Creators:  
 **Name:** David Brodsky  
 **Github:** [DBrodsky90](https://github.com/DBrodsky90)  
@@ -43,5 +53,4 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 ####User Stories:  
 ![User Stories](http://i.imgur.com/wvvb8UE.png)  
 
-
-
+##Copyright
