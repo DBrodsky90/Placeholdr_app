@@ -1,4 +1,4 @@
-#Placehold.r  
+#Placehold.r
 ![logo](http://i.imgur.com/X9WVOuG.png?1)  
 Heroku Link: https://placeholdr-app.herokuapp.com/  
 
@@ -9,10 +9,10 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 4. [Overview](#overview-what-is-placeholdr)  
 5. [Routes](#placeholdr-routes)  
 6. [User Stores: How to use Placeholdr](#user-stories)  
-7. [Copyright](#copyright) 
+7. [Copyright Notice](#copyright-notice) 
 
 
-###Creators  
+##Creators  
 **Name:** David Brodsky  
 **Github:** [DBrodsky90](https://github.com/DBrodsky90)  
 
@@ -22,28 +22,28 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 **Name:** Lauren Levine  
 **Github:** [llevine](https://github.com/llevine)  
 
-###Technologies Used
+##Technologies Used
 
 **Core**  
 1. Rails  
 2. Ruby  
   
 **Gems**  
-1. gem 'searchbing'  
-2. gem 'miro'  
-3. gem 'bitly'  
-4. gem 'cloudinary'  
+1. [gem 'searchbing'](https://github.com/rcullito/searchbing)  
+2. [gem 'miro'](https://github.com/jonbuda/miro)  
+3. [gem 'bitly'](https://github.com/philnash/bitly)  
+4. [gem 'cloudinary'](https://github.com/cloudinary/cloudinary_gem)  
   
 **Testing**  
-1. RSpec  
-2. Shoulda-Matchers  
+1. [RSpec](https://github.com/rspec/rspec)  
+2. [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)  
 
 
 ##Entity Relationship Diagram  
 ![ERD](http://i.imgur.com/REohJ9O.png)  
 
 ##Overview: What is Placeholdr?  
-####An application for developers & designers to easily access placeholder content and other features.
+An application for developers & designers to easily access placeholder content and other features.
 
 
 ##Placeholdr Routes  
@@ -53,4 +53,6 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 ###User Stories:  
 ![User Stories](http://i.imgur.com/wvvb8UE.png)  
 
-##Copyright
+##Copyright Notice
+The images used in this app are for an educational project only and not for mass distribution or for profit.
+
