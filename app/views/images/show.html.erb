@@ -1,52 +1,3 @@
-<<<<<<< HEAD
-<div class="main_content">
-	<div class="container" id="all_boards">
-		<div class="single image">
-				<p> 
-					Image Title: <%= @image.title %>
-					Width: <%= @image.width %>, 
-					Height: <%= @image.height %>
-					File Size: <%= @image.filesize %>
-				</p>
-				<img src="<%= @image.imgurl %>">
-				<br>
-				<div class="url_box">
-					Copy Image URL:
-						<input type="text" name="url" value="<%= @image.imgurl %>" readonly>
-				</div>
-				<div>
-					Image's dominant colors
-						<% img = Miro::DominantColors.new("#{@image.imgurl}").to_hex %>
-						<% img.each do |color| %>
-							<div style="background-color: <%= color %> "> <%= color %> </div> 
-						<% end %>
-				</div>	
-		</div>
-||||||| merged common ancestors
-<div class="main_content">
-	<div class="container" id="all_boards">
-		<div class="single image">
-				<p> 
-					Image Title: <%= @image.title %>
-					Width: <%= @image.width %>, 
-					Height: <%= @image.height %>
-					File Size: <%= @image.filesize %>
-				</p>
-				<img src="<%= @image.imgurl %>">
-				<br>
-				<div class="url_box">
-					Copy Image URL:
-						<input type="text" name="url" value="<%= @short_url %>" readonly>
-				</div>
-				<div>
-					Image's dominant colors
-						<% img = Miro::DominantColors.new("#{@image.imgurl}").to_hex %>
-						<% img.each do |color| %>
-							<div style="background-color: <%= color %> "> <%= color %> </div> 
-						<% end %>
-				</div>	
-		</div>
-=======
 <div class="main_content images" id="image_show">
 	<img src="<%= @image.imgurl %>">
 	<div class="image_info">
@@ -56,7 +7,6 @@
 		<span>Height:</span> <%= @image.height %><br>
 		<span>File Size:</span> <%= @image.filesize %>
 		</p>
->>>>>>> 41d6c0df155f206d3190ce45582aa988c6df3a32
 	</div>
 	
 	<div class="url_container">
