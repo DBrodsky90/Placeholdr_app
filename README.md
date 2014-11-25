@@ -53,5 +53,5 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 ###User Stories:  
 ![User Stories](http://i.imgur.com/wvvb8UE.png)  
 
-##Copyright (C)
+##Copyright ©
 
