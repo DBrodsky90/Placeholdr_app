@@ -2,7 +2,17 @@
 ![logo](http://i.imgur.com/X9WVOuG.png?1)  
 Heroku Link: https://placeholdr-app.herokuapp.com/  
 
-###Creators:  
+##Table of Contents  
+1. [Creators](#creators)  
+2. [Technologies](#technologies-used)  
+3. [ERD](#entity-relationship-diagram)  
+4. [Overview](#overview-what-is-placeholdr)  
+5. [Routes](#placeholdr-routes)  
+6. [User Stores: How to use Placeholdr](#user-stories)  
+7. [Copyright](#copyright) 
+
+
+###Creators  
 **Name:** David Brodsky  
 **Github:** [DBrodsky90](https://github.com/DBrodsky90)  
 
@@ -12,7 +22,7 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 **Name:** Lauren Levine  
 **Github:** [llevine](https://github.com/llevine)  
 
-###Technologies Used: (we could link to each?)
+###Technologies Used
 
 **Core**  
 1. Rails  
@@ -32,16 +42,15 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 ##Entity Relationship Diagram  
 ![ERD](http://i.imgur.com/REohJ9O.png)  
 
-##What is Placehold.r?  
+##Overview: What is Placeholdr?  
 ####An application for developers & designers to easily access placeholder content and other features.
 
 
-##Placehold.r Routes  
+##Placeholdr Routes  
 ![Routes](http://i.imgur.com/kcX3gja.png)  
 
-##How to use Placehold.r?  
-####User Stories:  
+##How to use Placeholdr  
+###User Stories:  
 ![User Stories](http://i.imgur.com/wvvb8UE.png)  
 
-
-
+##Copyright

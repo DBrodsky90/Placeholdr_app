@@ -13,9 +13,11 @@
 	</p>
 
 	<hr>
-		<h3>To placehold images from this board uuse the example link below with your image dimensions!</h3>
-		<h4> https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/200/200 </h4>
-		<h4> https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/length/width </h4>
+		<h4>To use images from this board as placeholders on your own project use the example link below and insert your preferred image dimensions!<br>
+		A random image will be generated on your page with each reload.
+		</h4>
+		<h4>Example: https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/200/200 </h4>
+		<h4>Example: https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/length/width </h4>
 	<hr>
 
 	<% if @board.user == current_user %>
@@ -29,10 +31,12 @@
 						<% @board.images.each_with_index do |image, index| %> 
 							<div class="board_image">
 								Select Image: <%= check_box_tag("selected_images[]", image.id) %>
+								<br>
 								<!-- makes the image a link to that images image show page -->
 								<%= link_to(image_path(image)) do %>
 									<img src="<%= image.imgurl %>" class="board_single_image"><br>
 								<% end %>
+							Click Image to view it's color scheme
 								<div class="url_container">
 									Copy Image URL: <input type="text" name="url" value="<%= @short_url[index] %>" readonly>
 									<%= hidden_field image.id, :value => image.id %>	
@@ -51,6 +55,8 @@
 					<%= link_to(image_path(image)) do %>
 							<img src="<%= image.imgurl %>">
 					<% end %>
+					<br>
+					Click Image to view it's color scheme
 					<div class="url_container">
 									Copy Image URL: <input type="text" name="url" value="<%= BitlyWrapper.short(image.imgurl) %>" readonly>
 									<%= hidden_field image.id, :value => image.id %>	
