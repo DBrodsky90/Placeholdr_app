@@ -1,4 +1,5 @@
-#Placehold.r ![logo](http://i.imgur.com/X9WVOuG.png?1)
+#Placehold.r
+![logo](http://i.imgur.com/X9WVOuG.png?1)
 Heroku Link: https://placeholdr-app.herokuapp.com/
 
 ##Creators: (should we link to our individual github accts?)
