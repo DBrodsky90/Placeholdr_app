@@ -30,16 +30,18 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 
 
 ##Entity Relationship Diagram  
-![ERD](http://i.imgur.com/REohJ9O.png)
+![ERD](http://i.imgur.com/REohJ9O.png)  
 
 ##What is Placehold.r?  
 ####An application for developers & designers to easily access placeholder content and other features.
 
 
-##Placehold.r Routes
-![Routes](http://i.imgur.com/kcX3gja.png)
+##Placehold.r Routes  
+![Routes](http://i.imgur.com/kcX3gja.png)  
 
 ##How to use Placehold.r?  
+####User Stories:  
+![User Stories](http://i.imgur.com/wvvb8UE.png)  
 
 
 
