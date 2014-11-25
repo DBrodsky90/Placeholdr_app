@@ -9,7 +9,7 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 4. [Overview](#overview-what-is-placeholdr)  
 5. [Routes](#placeholdr-routes)  
 6. [User Stores: How to use Placeholdr](#user-stories)  
-7. [Copyright](#copyright) 
+7. [Copyright Notice](#copyright-notice) 
 
 
 ##Creators  
@@ -53,5 +53,6 @@ An application for developers & designers to easily access placeholder content a
 ###User Stories:  
 ![User Stories](http://i.imgur.com/wvvb8UE.png)  
 
-##Copyright ©
+##Copyright Notice
+The images used in this app are for an educational project only and not for mass distribution or for profit.
 
