@@ -13,7 +13,7 @@
 		<span>Height:</span> <%= image[:Height] %><br>
 		<span>File Type:</span> <%= image[:ContentType] %><br>
 
-		<% if logged_in.include?(:yes) %>
+		<% if logged_in %>
 			<span>Select Image:</span> <%= check_box_tag("selected_images[]", "image#{index}") %>
 							<%= hidden_field "image#{index}", :title, :value => image[:Title] %>
 							<%= hidden_field "image#{index}", :imgurl, :value => image[:MediaUrl] %>
