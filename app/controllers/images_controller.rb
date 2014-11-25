@@ -18,7 +18,8 @@ class ImagesController < ApplicationController
 	def create
 		board = Board.find(params[:board_id])
 		if params["selected_images"] == nil
-			redirect_to images_path
+			flash[:uncheck_error] = "Please select at least one image to add to your board."
+			redirect_to home_path
 		else
 			params["selected_images"].each do |image|
 				image_obj =  Image.create(image_params(image))

@@ -1,5 +1,8 @@
 <div class="main_content images">
-	<h1>Search Results for: <%= params[:search] %> </h1>
+	<h1>Search Results for: <%= params[:search] %></h1>
+	<% if flash[:uncheck_error] %>
+		<p class="uncheck_error"><%= flash[:uncheck_error] %></p>
+	<% end %>
 	<div id="all_images">
 		<% if session[:current_user_id] %>
 			
