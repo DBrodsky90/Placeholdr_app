@@ -40,7 +40,7 @@
 							<% end %>
 
 							<div class="url_container">
-								Copy Image URL: <input type="text" name="url" value="<%= @short_url[index] %>" readonly>
+								Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" readonly>
 								<%= hidden_field image.id, :value => image.id %>	
 							</div>
 

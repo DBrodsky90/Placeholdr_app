@@ -9,7 +9,6 @@ class ImagesController < ApplicationController
 
 	def show
 		@image = Image.find(params[:id])
-		@short_url = BitlyWrapper.short(@image.imgurl)
 	end
 
 	def create

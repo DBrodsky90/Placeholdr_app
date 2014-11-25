@@ -9,9 +9,6 @@ class BoardsController < ApplicationController
 
 	def show
 		@board = Board.find(params[:id])
-		@short_url = @board.images.map do |image|
-			BitlyWrapper.short(image.imgurl)
-		end
 		# @current_user = current_user
 	end
 
