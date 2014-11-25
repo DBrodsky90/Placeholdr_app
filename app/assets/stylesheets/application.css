@@ -46,15 +46,25 @@ a {
 
 /* ------------------------- NAVBAR STYLING ----------------------- */
 
-#navbar {
-    background: black;
-    height: 100px;
-    margin:0; 
-    color: white;  
+#headernavigation{
+    float: right;
 }
 
+#nav-home, #nav-images, #nav-boards, #nav-users {
+    width: 100%;
+    background: black;
+    height: 100px;
+}
+
+#navbar {
+    width: 100%;
+    display: inline;
+    margin:0; 
+    color: white; 
+}
 
 #navbar li {
+    position: relative;
     float:left;
     padding: 0 10px;
     letter-spacing: .1em;
@@ -89,13 +99,13 @@ a {
     letter-spacing: 2px;
 }
 
-#navbar input[type=text], 
-.url_box>input[type=text]  {
+#navbar input[type=text], .url_box>input[type=text]  {
     color: black;
 }
 
 #thumb_avatar {
     max-height: 75px;
+    padding-right: 8px;
     position: relative;
     top: 15px;
 }
@@ -286,7 +296,7 @@ a {
 .right {
     float: left;
     width: 48%;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 .vital {
@@ -399,6 +409,11 @@ a {
     margin-left: 25px
 }
 
+.images h4 {
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
 
 
 /*////////////////////////////////////////////////////////////*/

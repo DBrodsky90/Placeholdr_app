@@ -1,3 +1,6 @@
 <div class="main_content search">
+	<% if flash[:uncheck_error] %>
+		<p class="uncheck_error"><%= flash[:uncheck_error] %></p>
+	<% end %>
 	<%= render 'search' %>
 </div>

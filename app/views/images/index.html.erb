@@ -1,5 +1,5 @@
 <div class="main_content images">
-	<h1>Search Results for: <%= params[:search] %> </h1>
+	<h1>Search Results for: <%= params[:search] %></h1>
 	<div id="all_images">
 		<% if session[:current_user_id] %>
 			
@@ -12,9 +12,11 @@
 						<br class="vital">
 						<hr>	
 					</div>
-				<% end %>			
+				<% end %>
+				<h4>Select Cork Board:</h4>
+				<p>Please select at least one image to add to your board.</p>			
 				<%= collection_select(nil, :board_id, @boards, :id, :name) %>
-				<span class="search_submit"><%= button_tag("Save Images") %></span>
+				<span class="search_submit"><%= submit_tag("Save Images") %></span>
 			<% end %>
 
 		<% else %>

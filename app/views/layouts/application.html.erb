@@ -8,7 +8,7 @@
 </head>
 <body>
 <!-- class is set to that value because you want the class of the navbar to = what page the user is on -->
-<nav id='nav-<%= params[:controller]%>'>
+<header id='nav-<%= params[:controller]%>'>
 	<!-- <img src="http://i.imgur.com/QwBNW0D.png" id="logo"> -->
 	<ul id="navbar">
 		<% if session[:current_user_id] %>
@@ -17,7 +17,7 @@
 			<%= render partial: 'sessions/navbar', locals: { navbar: [:log_in, :sign_up, :home, :all_boards, :search] } %>
 		<% end %>
 	</ul>
-</nav>
+</header>
 
 
 <%= yield %>

@@ -1,13 +1,16 @@
 <div class="main_content">
 	<div class="container" id="all_boards">
 		<div class="single image">
-				<p> Image Title : <%= @image.title %> </p>
-				<p> Width : <%= @image.width %>, Height : <%= @image.height %> </p>
-				<p> File Size : <%= @image.filesize %> </p>
+				<p> 
+					Image Title: <%= @image.title %>
+					Width: <%= @image.width %>, 
+					Height: <%= @image.height %>
+					File Size: <%= @image.filesize %>
+				</p>
 				<img src="<%= @image.imgurl %>">
 				<br>
 				<div class="url_box">
-					<b>Copy Image URL:</b>
+					Copy Image URL:
 						<input type="text" name="url" value="<%= @short_url %>" readonly>
 				</div>
 				<div>

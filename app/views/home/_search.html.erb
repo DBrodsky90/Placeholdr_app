@@ -1,5 +1,5 @@
 <%= form_tag images_path, method: "get" do %>
 	<%= label_tag "Find Images:" %>
 	<%= text_field_tag "search" %>
-	<span class="search_submit"><%= submit_tag %></span>
+	<span class="search_submit"><%= submit_tag("Search") %></span>
 <% end %>
