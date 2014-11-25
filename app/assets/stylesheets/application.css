@@ -174,7 +174,7 @@ a {
 
 /*------ USER VIEWS STYLING -----*/
 
-.main_content.user, .users, .main_content.images, .main_content.all_boards {
+.main_content.user, .users, .main_content.images, .main_content.all_boards, .main_content#image_show {
     width: 45%;
     border-radius: 5px;
     box-shadow: 
@@ -220,8 +220,12 @@ a {
     margin-top: 10px;
 }
 
-.bio img {
+.bio img, #image_show img {
     max-width: 75%;
+}
+
+#image_show img {
+    margin-top: 20px;
 }
 
 .user a, .cork_boards p {
@@ -317,7 +321,7 @@ a {
 ;
 }
 
-.right>p {
+.right>p, .image_info {
     text-align: left;
     font-weight: 300;
     letter-spacing: 2px;
@@ -336,6 +340,47 @@ a {
     padding: 10px;
 }
 
+#image_show .url_container input[type=text] {
+
+    color: black;
+}
+
+.image_info {
+    font-size: 16px;
+    margin: 0 75px;
+    line-height: 20px;
+}
+
+.image_info span {
+    color: #f0ff00;
+    font-weight: 400;
+}
+
+#image_show hr {
+    width: 80%;
+    margin-top: 25px;
+}
+
+#color_block h2 {
+    font-weight: 300;
+    padding-top: 20px;
+}
+
+#all_colors {
+    border: 2px solid rgba(255, 255, 255, .7);
+}
+
+#all_colors span {
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 18px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+/*    -webkit-text-stroke: 2px black;
+*/}
+
+.single_color {
+    padding: 10px 0;
+}
 /*-----------BOARDS VIEWS SPECIFIC STYLING--------*/
 
 .main_content.all_boards {
@@ -541,6 +586,10 @@ input[type=text]:focus, input[type=password]:focus {
 }
 
 .users .single h4:hover {
+    color: #f0ff00;
+}
+
+#headernavigation a:hover {
     color: #f0ff00;
 }
 
