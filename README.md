@@ -6,7 +6,7 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 1. [Creators](#creators)  
 2. [Technologies](#technologies-used)  
 3. [ERD](#entity-relationship-diagram)  
-4. [Overview](#overview:-what-is-placeholdr)  
+4. [Overview](#overview-what-is-placeholdr)  
 5. [Routes](#placeholdr-routes)  
 6. [User Stores: How to use Placeholdr](#user-stories)  
 7. [Copyright](#copyright) 
