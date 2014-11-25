@@ -46,7 +46,7 @@ a {
     background: black;
     height: 100px;
     margin:0; 
-    color: white;   
+    color: white;  
 }
 
 
@@ -149,9 +149,108 @@ a {
     color: black;
 }
 
-
-
 /*----- Search Bar End -----*/
+
+/*------ USER VIEWS STYLING -----*/
+
+.main_content.user, .users {
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );: ;
+}
+
+.main_content.users {
+    width: 75%;
+}
+
+.bio {
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.bio h1, .user a, .users h1 {
+    font-weight: 300;
+}
+
+.bio h1, .users h1 {
+    display: inline-block;
+    letter-spacing: 2px;
+    padding: 0 10px;
+    margin: 20px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.bio h4 {
+    margin: 5px 0 2px 0;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #f0ff00;
+}
+
+.bio img {
+    max-width: 75%;
+    border: 3px solid white;
+}
+
+.user a, .cork_boards p {
+    letter-spacing: 1px;
+}
+
+.cork_boards, .cork_boards a {
+    background: white;
+    color: black;
+}
+
+.cork_boards h1 {
+    margin: 0 0 3px 0;
+    padding-top: 10px;
+}
+
+.cork_boards h2>a, .cork_boards h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: -3px;
+    padding: 0 8px;
+}
+
+#all_boards {
+    padding: 15px 0 25px 0;
+}
+
+.cork_boards hr {
+    width: 60%;
+    border: 3px dashed #f0ff00;
+}
+
+.cork_boards p {
+    margin: 0;
+    padding-bottom: 5px;
+    font-weight: 300;
+}
+
+#all_users {
+    margin-top: 25px;
+}
+
+.single {
+    display: inline-block;
+    margin: 10px 25px;
+    background: rgba(255, 255, 255, .2);
+}
+
+.single .thumb {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+
+
+/*------------*/
 
 .all_boards {
     padding: 0px 25px 25px;
@@ -184,7 +283,7 @@ a {
     font-weight: 100;
 }
 
-.board_show, .user {
+.board_show {
     background: white;
     border-radius: 0;
     box-shadow: none;
@@ -199,9 +298,9 @@ a {
     display: block;
 }
 
-.single_image {
+/*.single_image {
     max-height: 150px;
-}
+}*/
 
 #images_block {
     display: block;
@@ -222,63 +321,7 @@ a {
     margin-top: 10px;
 }
 
-.bio {
-    margin: 0 auto;
-    padding-bottom: 10px;
-    background: black;
-    color: white;
-}
 
-.bio>h1, .bio>a {
-    padding-top: 15px;
-}
-
-.cork_boards {
-    padding-bottom: 15px;
-}
-
-.cork_boards>h4>a, .cork_boards>p {
-    margin-top: -20px;
-    color: black;
-}
-
-.user, .board_show  {
-    width: 750px;
-    margin: 200px auto;
-}
-
-.members>h1{
-        margin: 0;
-        text-transform: uppercase;
-        font-size: 2em;
-        letter-spacing: .5pt;
-        text-align: center;
-}
-
-.members {
-    background: white;
-    width: 1000px;
-    margin: 200px auto;
-}
-
-.members .single {
-    display: inline-block;
-    margin: 25px 10px;
-}
-
-.single img {
-    margin: 0 10px;
-    max-width: 200px;
-    max-height: 200px;
-}
-
-.bio h4 {
-    margin-top: 0;
-}
-
-.single>a {
-    color: black;
-}
 /*////////////////////////////////////////////////////////////*/
 
 /*-----------------FORM STYLING GOES HERE--------------------*/
@@ -378,18 +421,18 @@ a {
 /*------------------- EVENT HANDLERS --------------------*/
 /*////////////////////////////////////////////////////////////*/
 
-#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  #search_submit:hover {
+#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  #search_submit:hover, .cork_boards h2>a:hover {
     color: black;
     background: #f0ff00;
 }
 
-input[type=text]:focus {
+input[type=text]:focus, input[type=password]:focus {
     outline: none;
     border-color: #f0ff00;
     box-shadow: 0 0 5px #f0ff00;
 }
 
-.all_boards>h4 a:hover {
+.all_boards>h4 a:hover, .bio a:hover {
     color: #f0ff00;
 }
 

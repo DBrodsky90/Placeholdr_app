@@ -1,13 +1,15 @@
-<div class="main_content members">
+<div class="main_content users">
 
 <h1>Members</h1>
 
-<div id="group">
-<% @users.each do |user| %>
-	<div class="single">
-		<%= render partial: 'user', locals: {user: user, user_page: [:index_page]} %>
+	<div id="all_users">
+		<% @users.each do |user| %>
+			<div class="single">
+				<%= link_to user_path(user) do %>
+					<%= render user %>
+				<% end %>
+			</div>
+		<% end %>
 	</div>
-<% end %>
-</div>
-
+	
 </div>
