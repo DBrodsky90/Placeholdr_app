@@ -1,14 +1,24 @@
 <div class="main_content user">
 	<div class="bio">
-		<h1>Profile</h1>
-			<%= render partial: 'user', locals: {user: @user, user_page: [:show_page]} %>
+		<h1>Profile</h1><br>
+			<%= render partial: 'user', locals: { user: @user } %>
+	<!-- on users/show if user is logged in there is a link on their show page to edit their user info, this is only allowed for the current user -->
+		<% if current_user == @user %>
+			<%= link_to "Edit User", edit_user_path(@user) %>
+		<% end %>
 	</div>
 
 	<div class="cork_boards">
 	<!-- displays all boards for this specific user -->
 		<h1>My Cork Boards</h1>
-			<% @user.boards.each do |board| %>
-				<%= render partial: '/boards/board', locals: {board: board} %>
-			<% end %>
+		<% if current_user %>
+			<%= render partial: '/boards/buttons', locals: {buttons: [:new_board]} %>
+		<% end %>
+			<div id="all_boards">
+				<% @user.boards.each do |board| %>
+					<%= render partial: '/boards/board', locals: {board: board} %>
+					<hr>
+				<% end %>
+			</div>
 	</div>
 </div>

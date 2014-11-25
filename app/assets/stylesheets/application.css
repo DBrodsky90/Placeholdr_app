@@ -14,24 +14,32 @@
  *= require_self
  */
 
+/*----------- FONT IMPORTS -------------*/
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+
 /* ------------------------- GLOBAL STYLING ----------------------- */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-
 body {
-	background: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg");
-	/*margin: 0 30px;*/
-	font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
+      background: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg");
+      width: 100%;
+      margin: 0 auto;
+      font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
 }
 
 /*shows what fields have errors in a form, if the form page doesn't save and is rerendered*/
 .field_with_errors input {
-  border: 2px solid red;
+    border: 2px solid red;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
     color: white;
+}
+
+#signup input[type="text"] {
+    width: 80%;
 }
 
 
@@ -42,7 +50,7 @@ a {
     background: black;
     height: 100px;
     margin:0; 
-    color: white;   
+    color: white;  
 }
 
 
@@ -71,7 +79,7 @@ a {
     margin: 35px 145px 35px 20px;   
 }
 
-#search_submit {
+.search_submit>input[type=submit] {
     padding: 2px 10px;
     background: black;
     border: 1px solid white;
@@ -81,7 +89,8 @@ a {
     letter-spacing: 2px;
 }
 
-#navbar input[type=text] {
+#navbar input[type=text], 
+.url_box>input[type=text]  {
     color: black;
 }
 
@@ -95,6 +104,10 @@ a {
     color: #f0ff00;
 }
 
+#logo {
+    width: 160px;
+}
+
 /*////////////////////////////////////////////////////////////*/
 
 
@@ -103,7 +116,7 @@ a {
 
 /*nav bar won't display on splash page*/
 #nav-sessions>#navbar .nav_right, #nav-sessions>#navbar #search, #nav-sessions>#navbar .divider {
-	display: none;
+  display: none;
 }
 
 /*Search bar won't display on images page*/
@@ -120,153 +133,274 @@ a {
 /* ------------------------- MAIN STYLING ----------------------- */
 
 .main_content {
+    margin: 200px auto;
     text-align: center;
-    margin-top: 170px;
+    background: black;
+    color: white;
 }
 
+
+/*----- Search Bar - Home Page -----*/
+
 .search {
-    background: black;
     padding: 15px 5px;
-    margin: 305px auto;
     width: 420px;
 }
 
-.search label {
-    background: black;
+.search label, 
+.url_box>span {
     font-weight: 300; 
+    letter-spacing: 2px;
+    color: #f0ff00;
+}
+
+.search #search, 
+.url_box>input[type=text] {
+    margin: 0 5px;
+    color: black;
+}
+
+/*----- Search Bar End -----*/
+
+/*------ USER VIEWS STYLING -----*/
+
+.main_content.user, .users, .main_content.images, .main_content.all_boards {
+    width: 45%;
+    border-radius: 5px;
+    box-shadow: 
+        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
+        0px 4px 20px rgba( 0,0,0,0.33 );: ;
+}
+
+.main_content.users {
+    width: 75%;
+}
+
+.bio {
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+.bio h1, .user a, .users h1, .main_content.images>h1, .all_boards h1 {
+    font-weight: 300;
+}
+
+.bio h1, .users h1, .main_content.images>h1, .all_boards h1 {
+    display: inline-block;
+    letter-spacing: 2px;
+    padding: 0 10px;
+    margin: 20px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+
+.bio h4 {
+    margin: 5px 0 2px 0;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #f0ff00;
+}
+
+.bio img {
+    max-width: 75%;
+}
+
+.user a, .cork_boards p {
+    letter-spacing: 1px;
+}
+
+.cork_boards, .cork_boards a {
+    background: white;
+    color: black;
+}
+
+.cork_boards h1 {
+    margin: 0 0 3px 0;
+    padding-top: 10px;
+}
+
+.cork_boards h2>a, .cork_boards h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: -3px;
+    padding: 0 8px;
+}
+
+#all_boards {
+    padding: 15px 0 25px 0;
+}
+
+.cork_boards hr {
+    width: 60%;
+    border: 3px dashed #f0ff00;
+}
+
+.cork_boards p {
+    margin: 0;
+    padding-bottom: 5px;
+    font-weight: 300;
+}
+
+#all_users {
+    margin-top: 25px;
+}
+
+.single {
+    display: inline-block;
+    margin: 10px 25px;
+    background: rgba(255, 255, 255, .2);
+}
+
+.single .thumb {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+}
+
+
+
+/*------------*/
+
+
+/*---------IMAGE VIEW STYLING----------*/
+
+.main_content.images, .main_content.board_show {
+    width: 90%;
+    padding-bottom: 50px;
+}
+
+.main_content.images>h1 {
+    margin-bottom: 45px;
+}
+
+.single_image img {
+    max-height: 250px;
+}
+
+.left {
+    float: left;
+    width: 48%;
+}
+
+.right {
+    float: left;
+    width: 48%;
+    margin-left: 20px;
+}
+
+.vital {
+    clear:both;
+}
+
+.main_content.images #all_images hr {
+    margin-bottom: 25px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, .2);
+;
+}
+
+.right>p {
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.5em;
+    font-size: 18px;
+}
+
+.right>p>span {
+    font-weight: 400;
+    font-size: 18px;
     letter-spacing: 1.5px;
     color: #f0ff00;
 }
 
-/*.boards {
-    background: white;
-    border-radius: 5px;
-    width: 25%;
-    padding: 10px 50px 50px 50px;
-    margin: 175px auto;
+.url_box {
+    padding: 10px;
+}
+
+/*input[type=checkbox]:checked, input[type=checkbox]:focus {
+    background-color: #f0ff00;
 }*/
 
-.all_boards {
-    padding: 0px 25px 25px;
-    background: black;
-    margin: 200px auto;
-    box-shadow: 
-        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
-        0px 4px 20px rgba( 0,0,0,0.33 );
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    display: table;
-    color: white;
-    position: static;
+/*-----------BOARDS VIEWS SPECIFIC STYLING--------*/
+
+.main_content.all_boards {
+    display: block;
 }
 
-.all_boards #search_submit {
-    border: 2px solid yellow;
+#boards_block {
+    margin-top: 20px;
+    padding-bottom: 25px;
 }
 
-.all_boards h4 {
-    letter-spacing: 1.5px;
+.all_boards h1 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.all_boards h2 {
+    letter-spacing: 2px;
     font-weight: 400;
-    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0;
+    margin-top: 10px;
 }
 
-.all_boards p, .board_show p {
-    margin-top: -20px;
-    letter-spacing: 1px;
+.all_boards p {
+    margin: 0;
+    font-size: 18px;
     font-weight: 100;
+    letter-spacing: 1px;
 }
 
-.board_show, .user {
+.all_boards .search_submit>input[type=submit] {
+    margin-top: 10px;
+}
+
+.board_show {
     background: white;
     border-radius: 0;
     box-shadow: none;
     color: black;
 }
 
+.board_show p {
+    margin-top: -20px;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
 .board_show h1, .board_show p {
     text-align: left;
 }
 
-.board_show #search_submit {
+.board_show .search_submit>input[type=submit] {
     display: block;
 }
+/*CHECK TO MAKE SURE BELOW DOESN"T CONFLICT WHAT"S ALREADY DONE*/
 
-.single_image {
+.board_single_image {
     max-height: 150px;
 }
 
-#images_block {
+#board_images_block {
     display: block;
     margin-top: 20px;
 }
 
-.image {
+.board_image {
     display: inline-block;
     margin: 10px;
     padding: 8px;
 }
-.image img {
+
+.board_image img {
     margin-left: 25px
 }
-.url_container>input {
-    border: 1px solid black;
-    padding: 5px;
-    margin-top: 10px;
-}
-
-.bio {
-    margin: 0 auto;
-    padding-bottom: 10px;
-    background: black;
-    color: white;
-}
-
-.bio>h1, .bio>a {
-    padding-top: 15px;
-}
-
-.cork_boards {
-    padding-bottom: 15px;
-}
-
-.cork_boards>h4>a, .cork_boards>p {
-    margin-top: -20px;
-    color: black;
-}
 
 
-.user, .board_show  {
-    width: 750px;
-    margin: 200px auto;
-}
 
-.members>h1{
-        margin: 0;
-        text-transform: uppercase;
-        font-size: 2em;
-        letter-spacing: .5pt;
-        text-align: center;
-}
-
-.members {
-    background: white;
-    width: 1000px;
-    margin: 200px auto;
-}
-
-.members .single {
-    display: inline-block;
-    margin: 25px 10px;
-}
-
-.single img {
-    margin: 0 10px;
-}
-
-.single>a {
-    color: black;
-}
 /*////////////////////////////////////////////////////////////*/
 
 /*-----------------FORM STYLING GOES HERE--------------------*/
@@ -275,7 +409,7 @@ a {
 .form {
     width: 350px;
     max-width: 406px;
-    margin: 305px auto;
+    margin: 200px auto;
 }
 
 #signup {
@@ -318,15 +452,15 @@ a {
     margin-top: 20px;
     padding: 14px 0;
     color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: 400;
     text-align: center;
     background: black;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    border: 3px groove #737b8d;
+    border: 3px solid #737b8d;
     display: table;
     position: static;
     clear: both;
@@ -366,12 +500,18 @@ a {
 /*------------------- EVENT HANDLERS --------------------*/
 /*////////////////////////////////////////////////////////////*/
 
-#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  #search_submit:hover {
+#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  .search_submit>input[type=submit]:hover, .cork_boards h2>a:hover {
     color: black;
     background: #f0ff00;
 }
 
-.all_boards>h4 a:hover {
+input[type=text]:focus, input[type=password]:focus {
+    outline: none;
+    border-color: #f0ff00;
+    box-shadow: 0 0 5px #f0ff00;
+}
+
+.all_boards>h4 a:hover, .bio a:hover, .all_boards>#boards_block a:hover {
     color: #f0ff00;
 }
 
@@ -381,3 +521,4 @@ a {
     background: #f0ff00;
     color: black;
 }
+

@@ -1,15 +1,15 @@
 <% if buttons.include?(:new_board) %>
-	<%= button_to "Create a New Board", new_board_path, :id=>"search_submit", method: :get %>
+	<%= button_to "Create a New Board", new_board_path, :class=>"search_submit", method: :get %>
 <% end %>
 
 <% if buttons.include?(:edit_board) %>
-	<%= button_to "Edit Board Information", edit_board_path, :id=>"search_submit", method: :get %>
+	<%= button_to "Edit Information", edit_board_path, :class=>"search_submit", method: :get %>
 <% end %>
 
 <% if buttons.include?(:find_image) %>
-	<%= button_to "Find More Images", home_path, :id=>"search_submit", method: :get %>
+	<%= button_to "Find Images", home_path, :class=>"search_submit", method: :get %>
 <% end %>
 
 <% if buttons.include?(:delete_board) %>
-	<%= button_to "Delete Board", board_path, :id=>"search_submit", method: :delete %>
+	<%= button_to "Delete Board", board_path, :class=>"search_submit", method: :delete %>
 <% end %>

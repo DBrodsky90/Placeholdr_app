@@ -1,43 +1,36 @@
-<div class="main_content">
-<div class="container image">
-	<% if session[:current_user_id] %>
-		<%= form_tag(images_path, :method => "post") do %>			
-			<% @images.each_with_index do |image, index| %>
-				<div class="single image">
-					Select Image: <%= check_box_tag("selected_images[]" ,"image#{index}") %>
-					<p> Image Title : <%= image[:Title] %> </p>
-					<p> Width : <%= image[:Width] %>, Height : <%= image[:Height] %> </p>
-					<p> File Type : <%= image[:ContentType] %> </p>
-					<img src="<%= image[:MediaUrl] %>">
-					<br>
-					<div class="url_box">
-						<b>Image URL :</b>
-						<input type="text" name="url" value="<%= @short_urls[index] %>" readonly>
+<div class="main_content images">
+	<h1>Search Results for: SEARCH TERM</h1>
+	<div id="all_images">
+		<% if session[:current_user_id] %>
+			
+			<%= form_tag(images_path, :method => "post") do %>				
+				<% @images.each_with_index do |image, index| %>
+					<div class="single_image">
+						
+						<%= render partial: 'images', locals: {image: image, index: index, logged_in: [:yes]} %>
+
+						<br class="vital">
+						<hr>	
 					</div>
-
-
-					<%= hidden_field "image#{index}", :title, :value => image[:Title] %>
-					<%= hidden_field "image#{index}", :imgurl, :value => image[:MediaUrl] %>
-					<%= hidden_field "image#{index}", :width, :value => image[:Width] %>
-					<%= hidden_field "image#{index}", :height, :value => image[:Height] %>
-					<%= hidden_field "image#{index}", :filesize, :value => image[:FileSize] %>
-				</div>
+				<% end %>			
+				<%= collection_select(nil, :board_id, @boards, :id, :name) %>
+				<span class="search_submit"><%= submit_tag %></span>
 			<% end %>
-			<%= collection_select(nil, :board_id, @boards, :id, :name) %>
-			<%= submit_tag %>
-		<% end %>
-	<% else %>
-		<% @images.each_with_index do |image, index| %>
-			<div class="single image">
-				<p> Image Title : <%= image[:Title] %> </p>
-				<p> Width : <%= image[:Width] %>, Height : <%= image[:Height] %> </p>
-				<p> File Type : <%= image[:ContentType] %> </p>
-				<img src="<%= image[:MediaUrl] %>">
-				<div class="url_box">
-						<b>Image URL :</b>
-						<input type="text" name="url" value="<%= @short_urls[index] %>" readonly>
+
+		<% else %>
+
+			<% @images.each_with_index do |image, index| %>
+				<div class="single_image">
+					<%= render partial: 'images', locals: {image: image, index: index} %>
+						
+					<br class="vital">
+					<hr>	
 				</div>
-			</div>
-		<% end %>
+			<% end %>	
+		</div>
+
 	<% end %>
+
+
 </div>
+

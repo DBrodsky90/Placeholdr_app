@@ -1,8 +1,8 @@
 <!-- makes it so that only private boards are seen when logged in and public boards are always seen -->
 	<% if board.user == @user  %>
-			<h4><%= link_to "#{board.name}", board_path(board) %></h4>
-			<p>Created by: <%= board.user.username %></p>
+			<h2><%= link_to "#{board.name}", board_path(board) %></h2>
+			<p>created by: <%= board.user.username %></p>
 	<% elsif board.public == true %>
-			<h4><%= link_to "#{board.name}", board_path(board) %></h4>
-			<p>Created by: <%= board.user.username %> </p>
+			<h2><%= link_to "#{board.name}", board_path(board) %></h2>
+			<p>created by: <%= board.user.username %></p>
 	<% end %>
