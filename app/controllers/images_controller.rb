@@ -17,20 +17,28 @@ class ImagesController < ApplicationController
 
 	def create
 		board = Board.find(params[:board_id])
-		params["selected_images"].each do |image|
-			image_obj =  Image.create(image_params(image))
-			board.add_image(image_obj)
+		if params["selected_images"] == nil
+			redirect_to images_path
+		else
+			params["selected_images"].each do |image|
+				image_obj =  Image.create(image_params(image))
+				board.add_image(image_obj)
+			end
+			redirect_to board_path(board)
 		end
-		redirect_to board_path(board)
 	end
 
 	def destroy
 		board = Board.find(params[:id])
-		params["selected_images"].each do |image|
-			img = Image.find(image)
-			img.destroy
+		if params["selected_images"] == nil
+			redirect_to board_path(board)
+		else
+			params["selected_images"].each do |image|
+				img = Image.find(image)
+				img.destroy
+			end
+			redirect_to board_path(board)
 		end
-		redirect_to board_path(board)
 	end
 
 	private
