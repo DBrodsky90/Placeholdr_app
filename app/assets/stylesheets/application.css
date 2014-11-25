@@ -14,23 +14,27 @@
  *= require_self
  */
 
+/*----------- FONT IMPORTS -------------*/
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:700);
+
+
 /* ------------------------- GLOBAL STYLING ----------------------- */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700);
-
 body {
-	background: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg");
-	/*margin: 0 30px;*/
-	font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
+      background: url("http://i405.photobucket.com/albums/pp132/karilmoo/paisley/cork1.jpg");
+      width: 100%;
+      margin: 0 auto;
+      font-family: 'Lato', "Helvetica Neue", Helvetica, sans-serif;
 }
 
 /*shows what fields have errors in a form, if the form page doesn't save and is rerendered*/
 .field_with_errors input {
-  border: 2px solid red;
+    border: 2px solid red;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
     color: white;
 }
 
@@ -103,7 +107,7 @@ a {
 
 /*nav bar won't display on splash page*/
 #nav-sessions>#navbar .nav_right, #nav-sessions>#navbar #search, #nav-sessions>#navbar .divider {
-	display: none;
+  display: none;
 }
 
 /*Search bar won't display on images page*/
@@ -120,31 +124,34 @@ a {
 /* ------------------------- MAIN STYLING ----------------------- */
 
 .main_content {
+    margin: 200px auto;
     text-align: center;
-    margin-top: 170px;
+    background: black;
+    color: white;
 }
 
+
+/*----- Search Bar - Home Page -----*/
+
 .search {
-    background: black;
     padding: 15px 5px;
-    margin: 305px auto;
     width: 420px;
 }
 
 .search label {
-    background: black;
     font-weight: 300; 
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     color: #f0ff00;
 }
 
-/*.boards {
-    background: white;
-    border-radius: 5px;
-    width: 25%;
-    padding: 10px 50px 50px 50px;
-    margin: 175px auto;
-}*/
+.search #search {
+    margin: 0 5px;
+    color: black;
+}
+
+
+
+/*----- Search Bar End -----*/
 
 .all_boards {
     padding: 0px 25px 25px;
@@ -280,7 +287,7 @@ a {
 .form {
     width: 350px;
     max-width: 406px;
-    margin: 305px auto;
+    margin: 200px auto;
 }
 
 #signup {
@@ -323,15 +330,15 @@ a {
     margin-top: 20px;
     padding: 14px 0;
     color: #fff;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    font-size: 18px;
+    font-weight: 400;
     text-align: center;
     background: black;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    border: 3px groove #737b8d;
+    border: 3px solid #737b8d;
     display: table;
     position: static;
     clear: both;
@@ -376,6 +383,12 @@ a {
     background: #f0ff00;
 }
 
+input[type=text]:focus {
+    outline: none;
+    border-color: #f0ff00;
+    box-shadow: 0 0 5px #f0ff00;
+}
+
 .all_boards>h4 a:hover {
     color: #f0ff00;
 }
@@ -386,3 +399,4 @@ a {
     background: #f0ff00;
     color: black;
 }
+
