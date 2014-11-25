@@ -235,7 +235,6 @@ a {
     color: black;
 }
 
-
 .user, .board_show  {
     width: 750px;
     margin: 200px auto;
@@ -262,6 +261,12 @@ a {
 
 .single img {
     margin: 0 10px;
+    max-width: 200px;
+    max-height: 200px;
+}
+
+.bio h4 {
+    margin-top: 0;
 }
 
 .single>a {

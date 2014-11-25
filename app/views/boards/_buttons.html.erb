@@ -3,11 +3,11 @@
 <% end %>
 
 <% if buttons.include?(:edit_board) %>
-	<%= button_to "Edit Board Information", edit_board_path, :id=>"search_submit", method: :get %>
+	<%= button_to "Edit Information", edit_board_path, :id=>"search_submit", method: :get %>
 <% end %>
 
 <% if buttons.include?(:find_image) %>
-	<%= button_to "Find More Images", home_path, :id=>"search_submit", method: :get %>
+	<%= button_to "Find Images", home_path, :id=>"search_submit", method: :get %>
 <% end %>
 
 <% if buttons.include?(:delete_board) %>

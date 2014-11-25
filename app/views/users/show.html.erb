@@ -7,6 +7,9 @@
 	<div class="cork_boards">
 	<!-- displays all boards for this specific user -->
 		<h1>My Cork Boards</h1>
+		<% if current_user %>
+			<%= render partial: '/boards/buttons', locals: {buttons: [:new_board]} %>
+		<% end %>
 			<% @user.boards.each do |board| %>
 				<%= render partial: '/boards/board', locals: {board: board} %>
 			<% end %>
