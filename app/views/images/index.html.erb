@@ -12,7 +12,7 @@
 					<br>
 					<div class="url_box">
 						<b>Image URL :</b>
-						<input type="text" name="url" value="<%= image[:MediaUrl] %>" size="40" readonly>
+						<input type="text" name="url" value="<%= @short_urls[index] %>" readonly>
 					</div>
 
 
@@ -27,12 +27,16 @@
 			<%= submit_tag %>
 		<% end %>
 	<% else %>
-		<% @images.each do |image| %>
+		<% @images.each_with_index do |image, index| %>
 			<div class="single image">
 				<p> Image Title : <%= image[:Title] %> </p>
 				<p> Width : <%= image[:Width] %>, Height : <%= image[:Height] %> </p>
 				<p> File Type : <%= image[:ContentType] %> </p>
 				<img src="<%= image[:MediaUrl] %>">
+				<div class="url_box">
+						<b>Image URL :</b>
+						<input type="text" name="url" value="<%= @short_urls[index] %>" readonly>
+				</div>
 			</div>
 		<% end %>
 	<% end %>

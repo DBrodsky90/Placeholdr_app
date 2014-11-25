@@ -4,17 +4,25 @@ class BoardsController < ApplicationController
 
 	def index
 		@boards = Board.all
-		@user = current_user
+		# @user = current_user
 	end
 
 	def show
 		@board = Board.find(params[:id])
 		@user = User.find(params[:id])
-		@current_user = current_user
+		@short_url = @board.images.map do |image|
+			BitlyWrapper.short(image.imgurl)
+		end
+		# @current_user = current_user
 	end
 
 	def new 
-		@board = Board.new
+		if session[:current_user_id]
+			@board = Board.new
+		else
+			redirect_to login_path
+			flash[:new_board_error] = "Please login or signup in order to create a new board."
+		end
 	end
 
 	def create
@@ -59,6 +67,17 @@ class BoardsController < ApplicationController
 		board.remove_image(image)
 		redirect_to board_path(board)
 	end
+
+	def random
+		@board = Board.find(params[:id])
+		@urls = @board.images.map do |image|
+			image.imgurl
+		end
+		@url = @urls.sample
+		@cloud_url = Cloudinary::Uploader.upload(@url, :width => params[:width], :height => params[:height], :crop => :fill)["url"]
+		send_data open(@cloud_url).read
+	end
+
 
 	private
 

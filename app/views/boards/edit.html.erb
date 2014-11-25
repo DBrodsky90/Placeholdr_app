@@ -1,12 +1,10 @@
-<div class="form">
-	<h1>Edit Your Boards Information</h1>
+<div class="form" id="signup">
+	<h1>Edit Board Info</h1>
 
 <% if @board.errors.any? %>
-  <div>
     <h3 style="color:red">Please fix the appropriate fields:</h3>
-  </div>
 <% end %>
 
-
+<hr>
 	<%= render 'form' %>
 </div>

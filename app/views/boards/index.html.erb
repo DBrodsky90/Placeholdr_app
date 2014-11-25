@@ -1,11 +1,8 @@
-<div class="main_content">
-	<h1>Boards</h1>
-
-	<!-- block below says if their is a current session, render the new_board btn -->
+<div class="main_content all_boards">
+	<h1>All Boards</h1>
 	
-	<% if session[:current_user_id] %>
-		<%= render partial: 'buttons', locals: {new_board: true, edit_board: false, find_image: false, delete: false} %>
-	<% end %>
+	<!-- buttons is an arbitrary word. means in this partial view please include these elements -->
+	<%= render partial: 'buttons', locals: {buttons: [:new_board]} %>
 	
 	<!-- renders a list of all the boards -->
 	<%= render @boards %>

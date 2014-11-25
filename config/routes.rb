@@ -16,5 +16,7 @@ Rails.application.routes.draw do
   get 'sessions/new' => 'sessions#new', as: 'login'
   post 'sessions'    => 'sessions#create'
   delete 'sessions'  => 'sessions#destroy'
+
+  get 'boards/:id/:width/:height' => 'boards#random', as: 'random'
   
 end
