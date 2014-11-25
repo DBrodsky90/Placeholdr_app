@@ -14,11 +14,20 @@
     <%= f.label :last_name %>
     <%= f.text_field :last_name %>
  </div>
-  
+
+<% if edit %>
+  <div class="input">
+    <%= f.label :avatar %>
+    <%= f.text_field :avatar %>
+ </div>
+<% else %>
   <div class="input">
     <%= f.label :avatar %>
     <%= f.text_field :avatar, :value => 'http://www.placecage.com/200/200' %>
- </div>
+ </div> 
+<% end %>
+
+
   
 <% if new_user %>
   <div class="input">
