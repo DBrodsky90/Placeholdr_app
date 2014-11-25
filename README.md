@@ -15,8 +15,10 @@
 ###Technologies Used: (we could link to each?)
 
 **Core**
-⋅⋅1. Rails
-⋅⋅2. Ruby
+
+1. Rails
+
+2. Ruby
 
 **Gems**
 ⋅⋅1. gem 'searchbing'
