@@ -1,4 +1,4 @@
-#Placehold.r ![logo](http://i.imgur.com/X9WVOuG.png)
+#Placehold.r ![logo](http://i.imgur.com/X9WVOuG.png?1)
 Heroku Link: https://placeholdr-app.herokuapp.com/
 
 ##Creators: (should we link to our individual github accts?)
@@ -29,11 +29,10 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 
 
 ##Entity Relationship Diagram 
-####Insert image of our ERD
+![ERD](http://i.imgur.com/REohJ9O.png)
 
 ##What is Placehold.r?
-###Mission statement:
-*Application for developers & designers to easily access placeholder content and other features.*
+*An application for developers & designers to easily access placeholder content and other features.*
 
 ##How do I use Placehold.r?
 
