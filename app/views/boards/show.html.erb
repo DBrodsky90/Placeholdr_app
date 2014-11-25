@@ -19,14 +19,14 @@
 				<%= render partial: 'buttons', locals: {buttons: [:edit_board, :find_image, :delete_board]} %>
 		</div>
 
-		<div id="images_block">
+		<div id="board_images_block">
 					<%= form_tag(image_path, :method => "delete") do %>
 						<% @board.images.each_with_index do |image, index| %> 
-							<div class="image">
+							<div class="board_image">
 								Select Image: <%= check_box_tag("selected_images[]", image.id) %>
 								<!-- makes the image a link to that images image show page -->
 								<%= link_to(image_path(image)) do %>
-									<img src="<%= image.imgurl %>" class="single_image"><br>
+									<img src="<%= image.imgurl %>" class="board_single_image"><br>
 								<% end %>
 								<div class="url_container">
 									Copy Image URL: <input type="text" name="url" value="<%= @short_url[index] %>" readonly>
@@ -36,7 +36,7 @@
 						<% end %>
 						<hr>
 						<% if @board.images.count > 0 %>
-							<%= button_tag "Delete Selected Images", :id=>"search_submit" %>
+							<%= button_tag "Delete Selected Images", :class=>"search_submit" %>
 						<% end %>
 					<% end %>
 			<% else %>

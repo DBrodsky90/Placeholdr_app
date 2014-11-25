@@ -38,6 +38,10 @@ a {
     color: white;
 }
 
+#signup input[type="text"] {
+    width: 80%;
+}
+
 
 
 /* ------------------------- NAVBAR STYLING ----------------------- */
@@ -75,7 +79,7 @@ a {
     margin: 35px 145px 35px 20px;   
 }
 
-#search_submit {
+.search_submit>input[type=submit] {
     padding: 2px 10px;
     background: black;
     border: 1px solid white;
@@ -98,6 +102,10 @@ a {
 
 #navbar .divider, #navbar #divider span  {
     color: #f0ff00;
+}
+
+#logo {
+    width: 160px;
 }
 
 /*////////////////////////////////////////////////////////////*/
@@ -173,11 +181,11 @@ a {
     padding-bottom: 10px;
 }
 
-.bio h1, .user a, .users h1, .main_content.images>h1 {
+.bio h1, .user a, .users h1, .main_content.images>h1, .all_boards h1 {
     font-weight: 300;
 }
 
-.bio h1, .users h1, .main_content.images>h1 {
+.bio h1, .users h1, .main_content.images>h1, .all_boards h1 {
     display: inline-block;
     letter-spacing: 2px;
     padding: 0 10px;
@@ -196,7 +204,6 @@ a {
 
 .bio img {
     max-width: 75%;
-    border: 3px solid white;
 }
 
 .user a, .cork_boards p {
@@ -258,8 +265,9 @@ a {
 
 /*---------IMAGE VIEW STYLING----------*/
 
-.main_content.images {
+.main_content.images, .main_content.board_show {
     width: 90%;
+    padding-bottom: 50px;
 }
 
 .main_content.images>h1 {
@@ -318,47 +326,36 @@ a {
 /*-----------BOARDS VIEWS SPECIFIC STYLING--------*/
 
 .main_content.all_boards {
-    display: inline-block;
+    display: block;
 }
 
-/*.left {
-    float: left;
-    width: 450px;
+#boards_block {
+    margin-top: 20px;
+    padding-bottom: 25px;
 }
 
-.right {
-    float: left;
-    width: 450px;
-}*/
-/*.all_boards {
-    padding: 0px 25px 25px;
-    background: black;
-    margin: 200px auto;
-    box-shadow: 
-        0px 0px 0px 5px rgba( 255,255,255,0.4 ), 
-        0px 4px 20px rgba( 0,0,0,0.33 );
-    -moz-border-radius: 5px;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    display: table;
-    color: white;
-    position: static;
+.all_boards h1 {
+    margin-top: 20px;
+    margin-bottom: 8px;
 }
 
-.all_boards #search_submit {
-    border: 2px solid yellow;
-}
-
-.all_boards h4 {
-    letter-spacing: 1.5px;
+.all_boards h2 {
+    letter-spacing: 2px;
     font-weight: 400;
-    text-transform: uppercase;
+    font-size: 20px;
+    margin: 0;
+    margin-top: 10px;
 }
 
-.all_boards p, .board_show p {
-    margin-top: -20px;
-    letter-spacing: 1px;
+.all_boards p {
+    margin: 0;
+    font-size: 18px;
     font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.all_boards .search_submit>input[type=submit] {
+    margin-top: 10px;
 }
 
 .board_show {
@@ -368,36 +365,40 @@ a {
     color: black;
 }
 
+.board_show p {
+    margin-top: -20px;
+    letter-spacing: 1px;
+    font-weight: 100;
+}
+
 .board_show h1, .board_show p {
     text-align: left;
 }
 
-.board_show #search_submit {
+.board_show .search_submit>input[type=submit] {
     display: block;
-}*/
+}
+/*CHECK TO MAKE SURE BELOW DOESN"T CONFLICT WHAT"S ALREADY DONE*/
 
-/*.single_image {
+.board_single_image {
     max-height: 150px;
-}*/
+}
 
-/*#images_block {
+#board_images_block {
     display: block;
     margin-top: 20px;
 }
 
-.image {
+.board_image {
     display: inline-block;
     margin: 10px;
     padding: 8px;
 }
-.image img {
+
+.board_image img {
     margin-left: 25px
 }
-.url_container>input {
-    border: 1px solid black;
-    padding: 5px;
-    margin-top: 10px;
-}*/
+
 
 
 /*////////////////////////////////////////////////////////////*/
@@ -499,7 +500,7 @@ a {
 /*------------------- EVENT HANDLERS --------------------*/
 /*////////////////////////////////////////////////////////////*/
 
-#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  #search_submit:hover, .cork_boards h2>a:hover {
+#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  .search_submit>input[type=submit]:hover, .cork_boards h2>a:hover {
     color: black;
     background: #f0ff00;
 }
@@ -510,7 +511,7 @@ input[type=text]:focus, input[type=password]:focus {
     box-shadow: 0 0 5px #f0ff00;
 }
 
-.all_boards>h4 a:hover, .bio a:hover {
+.all_boards>h4 a:hover, .bio a:hover, .all_boards>#boards_block a:hover {
     color: #f0ff00;
 }
 

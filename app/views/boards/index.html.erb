@@ -4,6 +4,8 @@
 	<!-- buttons is an arbitrary word. means in this partial view please include these elements -->
 	<%= render partial: 'buttons', locals: {buttons: [:new_board]} %>
 	
-	<!-- renders a list of all the boards -->
-	<%= render @boards %>
+	<div id="boards_block">
+		<!-- renders a list of all the boards -->
+		<%= render @boards %>
+	</div>
 </div>
