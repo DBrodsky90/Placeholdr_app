@@ -85,7 +85,8 @@ a {
     letter-spacing: 2px;
 }
 
-#navbar input[type=text] {
+#navbar input[type=text], 
+.url_box>input[type=text]  {
     color: black;
 }
 
@@ -138,13 +139,15 @@ a {
     width: 420px;
 }
 
-.search label {
+.search label, 
+.url_box>span {
     font-weight: 300; 
     letter-spacing: 2px;
     color: #f0ff00;
 }
 
-.search #search {
+.search #search, 
+.url_box>input[type=text] {
     margin: 0 5px;
     color: black;
 }
@@ -153,7 +156,7 @@ a {
 
 /*------ USER VIEWS STYLING -----*/
 
-.main_content.user, .users {
+.main_content.user, .users, .main_content.images, .main_content.all_boards {
     width: 45%;
     border-radius: 5px;
     box-shadow: 
@@ -170,11 +173,11 @@ a {
     padding-bottom: 10px;
 }
 
-.bio h1, .user a, .users h1 {
+.bio h1, .user a, .users h1, .main_content.images>h1 {
     font-weight: 300;
 }
 
-.bio h1, .users h1 {
+.bio h1, .users h1, .main_content.images>h1 {
     display: inline-block;
     letter-spacing: 2px;
     padding: 0 10px;
@@ -252,7 +255,82 @@ a {
 
 /*------------*/
 
-.all_boards {
+
+/*---------IMAGE VIEW STYLING----------*/
+
+.main_content.images {
+    width: 90%;
+}
+
+.main_content.images>h1 {
+    margin-bottom: 45px;
+}
+
+.single_image img {
+    max-height: 250px;
+}
+
+.left {
+    float: left;
+    width: 48%;
+}
+
+.right {
+    float: left;
+    width: 48%;
+    margin-left: 20px;
+}
+
+.vital {
+    clear:both;
+}
+
+.main_content.images #all_images hr {
+    margin-bottom: 25px;
+    width: 90%;
+    border: 1px solid rgba(255, 255, 255, .2);
+;
+}
+
+.right>p {
+    text-align: left;
+    font-weight: 300;
+    letter-spacing: 2px;
+    line-height: 1.5em;
+    font-size: 18px;
+}
+
+.right>p>span {
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    color: #f0ff00;
+}
+
+.url_box {
+    padding: 10px;
+}
+
+/*input[type=checkbox]:checked, input[type=checkbox]:focus {
+    background-color: #f0ff00;
+}*/
+
+/*-----------BOARDS VIEWS SPECIFIC STYLING--------*/
+
+.main_content.all_boards {
+    display: inline-block;
+}
+
+/*.left {
+    float: left;
+    width: 450px;
+}
+
+.right {
+    float: left;
+    width: 450px;
+}*/
+/*.all_boards {
     padding: 0px 25px 25px;
     background: black;
     margin: 200px auto;
@@ -296,13 +374,13 @@ a {
 
 .board_show #search_submit {
     display: block;
-}
+}*/
 
 /*.single_image {
     max-height: 150px;
 }*/
 
-#images_block {
+/*#images_block {
     display: block;
     margin-top: 20px;
 }
@@ -319,7 +397,7 @@ a {
     border: 1px solid black;
     padding: 5px;
     margin-top: 10px;
-}
+}*/
 
 
 /*////////////////////////////////////////////////////////////*/
