@@ -9,7 +9,7 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 4. Overview  
 5. Routes  
 6. User Stories - How to use Placeholdr  
-[Copyright](README.md/Copyright)7. Copyright  
+7. Copyright  
 
 
 ###Creators:  
