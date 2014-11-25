@@ -14,7 +14,7 @@
 					</div>
 				<% end %>			
 				<%= collection_select(nil, :board_id, @boards, :id, :name) %>
-				<span class="search_submit"><%= submit_tag %></span>
+				<span class="search_submit"><%= button_tag("Save Images") %></span>
 			<% end %>
 
 		<% else %>
