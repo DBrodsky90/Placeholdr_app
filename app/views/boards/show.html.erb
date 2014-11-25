@@ -41,7 +41,7 @@
 						<% end %>
 						<hr>
 						<% if @board.images.count > 0 %>
-							<%= button_tag "Delete Selected Images", :class=>"search_submit" %>
+							<span class="search_submit"><%= submit_tag("Delete Selected Images") %></span>
 						<% end %>
 					<% end %>
 			<% else %>

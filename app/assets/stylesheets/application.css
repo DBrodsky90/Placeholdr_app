@@ -50,9 +50,9 @@ a {
     background: black;
     height: 100px;
     margin:0; 
-    color: white;  
+    color: white;
+    width: 100%;  
 }
-
 
 #navbar li {
     float:left;
@@ -89,8 +89,7 @@ a {
     letter-spacing: 2px;
 }
 
-#navbar input[type=text], 
-.url_box>input[type=text]  {
+#navbar input[type=text], .url_box>input[type=text]  {
     color: black;
 }
 
@@ -286,7 +285,7 @@ a {
 .right {
     float: left;
     width: 48%;
-    margin-left: 20px;
+    margin-left: 5px;
 }
 
 .vital {
@@ -399,6 +398,11 @@ a {
     margin-left: 25px
 }
 
+.images h4 {
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+    font-weight: 400;
+}
 
 
 /*////////////////////////////////////////////////////////////*/

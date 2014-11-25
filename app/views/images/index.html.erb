@@ -12,9 +12,10 @@
 						<br class="vital">
 						<hr>	
 					</div>
-				<% end %>			
+				<% end %>
+				<h4>Select Cork Board:</h4>			
 				<%= collection_select(nil, :board_id, @boards, :id, :name) %>
-				<span class="search_submit"><%= button_tag("Save Images") %></span>
+				<span class="search_submit"><%= submit_tag("Save Images") %></span>
 			<% end %>
 
 		<% else %>
