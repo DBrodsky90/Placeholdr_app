@@ -1,4 +1,4 @@
-#[Placehold.r](https://placeholdr-app.herokuapp.com/)  
+#Placehold.r
 ![logo](http://i.imgur.com/X9WVOuG.png?1)  
 Heroku Link: https://placeholdr-app.herokuapp.com/  
 
