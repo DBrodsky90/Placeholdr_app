@@ -32,8 +32,7 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 **Gems**  
 1. [gem 'searchbing'](https://github.com/rcullito/searchbing)  
 2. [gem 'miro'](https://github.com/jonbuda/miro)  
-3. [gem 'bitly'](https://github.com/philnash/bitly)  
-4. [gem 'cloudinary'](https://github.com/cloudinary/cloudinary_gem)  
+3. [gem 'cloudinary'](https://github.com/cloudinary/cloudinary_gem)  
   
 **Testing**  
 1. [RSpec](https://github.com/rspec/rspec)  
