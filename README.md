@@ -12,7 +12,7 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 7. [Copyright](#copyright) 
 
 
-###Creators  
+##Creators  
 **Name:** David Brodsky  
 **Github:** [DBrodsky90](https://github.com/DBrodsky90)  
 
@@ -22,21 +22,21 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 **Name:** Lauren Levine  
 **Github:** [llevine](https://github.com/llevine)  
 
-###Technologies Used
+##Technologies Used
 
 **Core**  
 1. Rails  
 2. Ruby  
   
 **Gems**  
-1. gem 'searchbing'  
-2. gem 'miro'  
-3. gem 'bitly'  
-4. gem 'cloudinary'  
+1. [gem 'searchbing'](https://github.com/rcullito/searchbing)  
+2. [gem 'miro'](https://github.com/jonbuda/miro)  
+3. [gem 'bitly'](https://github.com/philnash/bitly)  
+4. [gem 'cloudinary'](https://github.com/cloudinary/cloudinary_gem)  
   
 **Testing**  
-1. RSpec  
-2. Shoulda-Matchers  
+1. [RSpec](https://github.com/rspec/rspec)  
+2. [Shoulda-Matchers](https://github.com/thoughtbot/shoulda-matchers)  
 
 
 ##Entity Relationship Diagram  
@@ -53,4 +53,5 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 ###User Stories:  
 ![User Stories](http://i.imgur.com/wvvb8UE.png)  
 
-##Copyright
+##Copyright (C)
+
