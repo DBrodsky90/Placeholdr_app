@@ -43,7 +43,7 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 ![ERD](http://i.imgur.com/REohJ9O.png)  
 
 ##Overview: What is Placeholdr?  
-####An application for developers & designers to easily access placeholder content and other features.
+An application for developers & designers to easily access placeholder content and other features.
 
 
 ##Placeholdr Routes  
