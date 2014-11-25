@@ -89,7 +89,7 @@ a {
     margin: 35px 145px 35px 20px;   
 }
 
-.search_submit>input[type=submit] {
+.search_submit>input[type=submit], input[type=submit] {
     padding: 2px 10px;
     background: black;
     border: 1px solid white;
@@ -329,10 +329,6 @@ a {
     padding: 10px;
 }
 
-/*input[type=checkbox]:checked, input[type=checkbox]:focus {
-    background-color: #f0ff00;
-}*/
-
 /*-----------BOARDS VIEWS SPECIFIC STYLING--------*/
 
 .main_content.all_boards {
@@ -515,7 +511,7 @@ a {
 /*------------------- EVENT HANDLERS --------------------*/
 /*////////////////////////////////////////////////////////////*/
 
-#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  .search_submit>input[type=submit]:hover, .cork_boards h2>a:hover {
+#signup #submit:hover, #signup h3>a:hover, #signup #delete>a:hover,  .search_submit>input[type=submit]:hover, input[type=submit]:hover, .cork_boards h2>a:hover {
     color: black;
     background: #f0ff00;
 }

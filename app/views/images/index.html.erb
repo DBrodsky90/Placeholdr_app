@@ -7,7 +7,7 @@
 				<% @images.each_with_index do |image, index| %>
 					<div class="single_image">
 						
-						<%= render partial: 'images', locals: {image: image, index: index, logged_in: [:yes]} %>
+						<%= render partial: 'images', locals: {image: image, index: index, logged_in: true } %>
 
 						<br class="vital">
 						<hr>	
@@ -23,7 +23,7 @@
 
 			<% @images.each_with_index do |image, index| %>
 				<div class="single_image">
-					<%= render partial: 'images', locals: {image: image, index: index} %>
+					<%= render partial: 'images', locals: {image: image, index: index, logged_in: false } %>
 						
 					<br class="vital">
 					<hr>	

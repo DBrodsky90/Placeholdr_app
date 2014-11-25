@@ -27,41 +27,52 @@
 		</div>
 
 		<div id="board_images_block">
-					<%= form_tag(image_path, :method => "delete") do %>
-						<% @board.images.each_with_index do |image, index| %> 
-							<div class="board_image">
-								Select Image: <%= check_box_tag("selected_images[]", image.id) %>
-								<br>
-								<!-- makes the image a link to that images image show page -->
-								<%= link_to(image_path(image)) do %>
-									<img src="<%= image.imgurl %>" class="board_single_image"><br>
-								<% end %>
-							Click Image to view it's color scheme
-								<div class="url_container">
-									Copy Image URL: <input type="text" name="url" value="<%= @short_url[index] %>" readonly>
-									<%= hidden_field image.id, :value => image.id %>	
-								</div>							
+			<h2>Click an image to generate a color scheme based off of its dominant colors.</h2>
+			<%= form_tag(image_path, :method => "delete") do %>
+				<% @board.images.each_with_index do |image, index| %> 
+					
+					<div class="board_image">
+						Select Image: <%= check_box_tag("selected_images[]", image.id) %><br>
+
+							<!-- makes the image a link to that images image show page -->
+							<%= link_to(image_path(image)) do %>
+								<img src="<%= image.imgurl %>" class="board_single_image">
+							<% end %>
+
+							<div class="url_container">
+								Copy Image URL: <input type="text" name="url" value="<%= @short_url[index] %>" readonly>
+								<%= hidden_field image.id, :value => image.id %>	
 							</div>
-						<% end %>
-						<hr>
-						<% if @board.images.count > 0 %>
-							<span class="search_submit"><%= submit_tag("Delete Selected Images") %></span>
-						<% end %>
+
+					</div>
+				<% end %>
+				
+				<hr>
+				
+				<% if @board.images.count > 0 %>
+					<span class="search_submit"><%= submit_tag("Delete Selected Images") %></span>
+				<% end %>
 					<% end %>
-			<% else %>
-				<!-- code block adds the images that belong to that specific board to the show view  -->
-				<% @board.images.each do |image| %> 
-					<!-- makes the image a link to that images image show page -->
-					<%= link_to(image_path(image)) do %>
-							<img src="<%= image.imgurl %>">
-					<% end %>
-					<br>
-					Click Image to view it's color scheme
+		</div>
+
+	<% else %>
+	
+		<div id="board_images_block">
+			<!-- code block adds the images that belong to that specific board to the show view  -->
+			<% @board.images.each do |image| %> 
+
+				<!-- makes the image a link to that images image show page -->
+				<%= link_to(image_path(image)) do %>
+					<img src="<%= image.imgurl %>" class="board_single_image">
+				<% end %>
+					
 					<div class="url_container">
 									Copy Image URL: <input type="text" name="url" value="<%= BitlyWrapper.short(image.imgurl) %>" readonly>
 									<%= hidden_field image.id, :value => image.id %>	
 					</div>	
-				<% end %>
+			<% end %>
+
 		</div>
+
 	<% end %>
 </div>
