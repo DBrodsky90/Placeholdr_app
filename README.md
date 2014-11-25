@@ -25,14 +25,14 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 ##Technologies Used
 
 **Core**  
-1. Rails  
-2. Ruby  
+1. [Ruby](https://github.com/ruby/ruby)  
+2. [Rails](https://github.com/rails/rails)  
+3. [PostgreSQL](https://github.com/postgres/postgres)  
   
 **Gems**  
 1. [gem 'searchbing'](https://github.com/rcullito/searchbing)  
 2. [gem 'miro'](https://github.com/jonbuda/miro)  
-3. [gem 'bitly'](https://github.com/philnash/bitly)  
-4. [gem 'cloudinary'](https://github.com/cloudinary/cloudinary_gem)  
+3. [gem 'cloudinary'](https://github.com/cloudinary/cloudinary_gem)  
   
 **Testing**  
 1. [RSpec](https://github.com/rspec/rspec)  

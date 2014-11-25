@@ -51,15 +51,15 @@
 				<% @board.images.each_with_index do |image, index| %> 
 					
 					<div class="board_image">
-						<!-- makes the image a link to that images image show page -->
-						<%= link_to(image_path(image)) do %>
-							<img src="<%= image.imgurl %>" class="board_single_image">
-						<% end %>
+
+<%= link_to(image_path(image)) do %>
+								<img src="<%= image.imgurl %>" class="board_single_image">
+							<% end %>
 
 						<div class="url_container">
-							Copy Image URL: <input type="text" name="url" value="<%= @short_url[index] %>" readonly>
-							<%= hidden_field image.id, :value => image.id %>	
-						</div>
+								Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" readonly>
+								<%= hidden_field image.id, :value => image.id %>	
+							</div>
 						Select Image: <%= check_box_tag("selected_images[]", image.id) %>
 						<br>
 					</div>
