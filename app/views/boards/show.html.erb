@@ -1,58 +1,82 @@
 <div class="main_content board_show">
-	<h1>
-		<%= @board.name %>
-	</h1>
-	<!-- board information contained in this block -->
-	<p>
-		<span>Created by:</span> <%= @board.user.first_name %> <%= @board.user.last_name %>
-		<% if @board.public == true %>
-			This board is public.
-		<% else %>
-			This Board is private.
-		<% end %>
-	</p>
+	<div id="board_info">
+		<h1>
+			<%= @board.name %>
+		</h1>
+	
+		<!-- board information contained in this block -->
+		<p>
+			<span>Theme:</span> <%= @board.theme %><br>
+			<span>Created by:</span> <%= @board.user.first_name %> <%= @board.user.last_name %><br>
+			<% if @board.public == true %>
+				This board is public.
+			<% else %>
+				This Board is private.
+			<% end %>
+		</p>
+	</div>
 
 	<hr>
-		<h4>To use images from this board as placeholders on your own project use the example link below and insert your preferred image dimensions!<br>
-		A random image will be generated on your page with each reload.
-		</h4>
-		<h4>Example: https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/200/200 </h4>
-		<h4>Example: https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/length/width </h4>
+
+	<div id="instructions">
+		<p>
+			Use the link below to randomly generate an image from your board onto your project. Just add your dimensions into the example url. A new image will be displayed with each reload.
+		</p>
+
+		<h2>
+			<span>Working example:</span> https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/<span class="measurement">200</span>/<span class="measurement">200</span>
+		</h2>
+		<h2>
+			<span>Template:</span> https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/<span class="measurement">length</span>/<span class="measurement">width</span>
+		</h2>
+	</div>
+	
 	<hr>
 
+<h2 class="boards_right">Click an image to generate a color scheme based off of its dominant colors.</h2>
+
+<div class="buttons_left">
 	<% if @board.user == current_user %>
 		<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
 		<div class="button_block">
 				<%= render partial: 'buttons', locals: {buttons: [:edit_board, :find_image, :delete_board]} %>
 		</div>
+</div>
+
+<br class="vital">
 
 		<div id="board_images_block">
-			<h2>Click an image to generate a color scheme based off of its dominant colors.</h2>
+			
 			<%= form_tag(image_path, :method => "delete") do %>
 				<% @board.images.each_with_index do |image, index| %> 
 					
 					<div class="board_image">
-						Select Image: <%= check_box_tag("selected_images[]", image.id) %><br>
+						<!-- makes the image a link to that images image show page -->
+						<%= link_to(image_path(image)) do %>
+							<img src="<%= image.imgurl %>" class="board_single_image">
+						<% end %>
 
-							<!-- makes the image a link to that images image show page -->
-							<%= link_to(image_path(image)) do %>
-								<img src="<%= image.imgurl %>" class="board_single_image">
-							<% end %>
-
-							<div class="url_container">
-								Copy Image URL: <input type="text" name="url" value="<%= @short_url[index] %>" readonly>
-								<%= hidden_field image.id, :value => image.id %>	
-							</div>
-
+						<div class="url_container">
+							Copy Image URL: <input type="text" name="url" value="<%= @short_url[index] %>" readonly>
+							<%= hidden_field image.id, :value => image.id %>	
+						</div>
+						Select Image: <%= check_box_tag("selected_images[]", image.id) %>
+						<br>
 					</div>
 				<% end %>
 				
 				<hr>
-				
-				<% if @board.images.count > 0 %>
-					<span class="search_submit"><%= submit_tag("Delete Selected Images") %></span>
-				<% end %>
-					<% end %>
+
+				<div class="buttons_left">
+					<div class="button_block">
+						<% if @board.images.count > 0 %>
+							<span class="search_submit"><%= submit_tag("Delete Selected Images") %></span>
+						<% end %>
+					</div>
+				</div>
+
+			<% end %>
+
 		</div>
 
 	<% else %>
