@@ -67,13 +67,21 @@ class BoardsController < ApplicationController
 		redirect_to board_path(board)
 	end
 
+#Method to generate custom placeholder link with random image, uses Cloudinary and Open URI
 	def random
+		#finding the board ID
 		@board = Board.find(params[:id])
-		@urls = @board.images.map do |image|
+		#@url_array creates array of all of urls from all images on the board
+		@url_array = @board.images.map do |image|
 			image.imgurl
 		end
-		@url = @urls.sample
+		#@url selects a random image url from the @urls array
+		@url = @url_array.sample
+		#uploads random url to the Cloudinary cloud and
+		#["url"] selects the newly resized url from the hash as @cloud)_url
 		@cloud_url = Cloudinary::Uploader.upload(@url, :width => params[:width], :height => params[:height], :crop => :fill)["url"]
+		#open/.read - opens the image url and reads content returning a string
+		#send_data sends the data to browser
 		send_data open(@cloud_url).read
 	end
 
