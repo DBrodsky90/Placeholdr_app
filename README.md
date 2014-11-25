@@ -28,7 +28,6 @@ Heroku Link: https://placeholdr-app.herokuapp.com/
 1. [Ruby](https://github.com/ruby/ruby)  
 2. [Rails](https://github.com/rails/rails)  
 3. [PostgreSQL](https://github.com/postgres/postgres)  
-4. 
   
 **Gems**  
 1. [gem 'searchbing'](https://github.com/rcullito/searchbing)  
