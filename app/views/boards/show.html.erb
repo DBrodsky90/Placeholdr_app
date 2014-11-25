@@ -11,6 +11,11 @@
 			This Board is private.
 		<% end %>
 	</p>
+
+	<hr>
+		<h3>To placehold images from this board uuse the example link below with your image dimensions!</h3>
+		<h4> https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/200/200 </h4>
+		<h4> https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/length/width </h4>
 	<hr>
 
 	<% if @board.user == current_user %>
