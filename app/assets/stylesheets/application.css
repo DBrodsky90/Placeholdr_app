@@ -204,12 +204,20 @@ a {
     border-right: 2px solid white;
 }
 
-.bio h4 {
+.bio h4, .users .single h4 {
     margin: 5px 0 2px 0;
     letter-spacing: 2px;
     font-weight: 400;
     font-size: 20px;
     color: #f0ff00;
+}
+
+.users .single h4 {
+    font-weight: 300;
+    font-size: 18px;
+    color: white;
+    padding-bottom: 10px;
+    margin-top: 10px;
 }
 
 .bio img {
@@ -267,7 +275,6 @@ a {
     height: 200px;
     overflow: hidden;
 }
-
 
 
 /*------------*/
@@ -531,5 +538,9 @@ input[type=text]:focus, input[type=password]:focus {
 #navbar>ul input[type=submit]:hover {
     background: #f0ff00;
     color: black;
+}
+
+.users .single h4:hover {
+    color: #f0ff00;
 }
 
