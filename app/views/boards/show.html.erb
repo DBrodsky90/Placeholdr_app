@@ -1,4 +1,5 @@
 <div class="main_content board_show">
+
 	<div id="board_info">
 		<h1>
 			<%= @board.name %>
@@ -26,6 +27,7 @@
 		<h2>
 			<span>Working example:</span> https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/<span class="measurement">200</span>/<span class="measurement">200</span>
 		</h2>
+		
 		<h2>
 			<span>Template:</span> https://placeholdr-app.herokuapp.com/boards/<%= params[:id] %>/<span class="measurement">length</span>/<span class="measurement">width</span>
 		</h2>
@@ -33,61 +35,59 @@
 	
 	<hr>
 
-<h2 class="boards_right">Click an image to generate a color scheme based off of its dominant colors.</h2>
+<!-- //////////////////////////////////////////////////////////////////////////////// -->
 
-<div class="buttons_left">
-	<% if @board.user == current_user %>
-		<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
-		<div class="button_block">
-				<%= render partial: 'buttons', locals: {buttons: [:edit_board, :find_image, :delete_board]} %>
-		</div>
-</div>
+	<h2 class="boards_right">Click an image to generate a color scheme based off of its dominant colors.</h2>
 
-<br class="vital">
+		<% if @board.user == current_user %>
+			<!-- if the logged in user is viewing a board they made, they will be able to see the find more images and edit board info button -->
+			<div class="button_block">
+					<%= render partial: 'buttons', locals: {buttons: [:edit_board, :find_image, :delete_board]} %>
+			</div>
 
-		<div id="board_images_block">
-			
-			<%= form_tag(image_path, :method => "delete") do %>
-				<% @board.images.each_with_index do |image, index| %> 
+			<br class="vital">
+
+			<div id="board_images_block">
 					
-					<div class="board_image">
+				<%= form_tag(image_path, :method => "delete") do %>
+					<% @board.images.each_with_index do |image, index| %> 
+						
+						<div class="board_image">
 
-						<%= link_to(image_path(image)) do %>
-							<img src="<%= image.imgurl %>" class="board_single_image">
-						<% end %>
+							<%= link_to(image_path(image)) do %>
+								<img src="<%= image.imgurl %>" class="board_single_image">
+							<% end %>
 
-						<div class="url_container">
-							Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" readonly>
-							<%= hidden_field image.id, :value => image.id %>	
+							<div class="url_container">
+								Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" readonly>
+								<%= hidden_field image.id, :value => image.id %>	
+							</div>
+							
+							Select Image: <%= check_box_tag("selected_images[]", image.id) %>
+							
+							<br>
 						</div>
-						
-						Select Image: <%= check_box_tag("selected_images[]", image.id) %>
-						
-						<br>
-					</div>
-				<% end %>
-				
-				<hr>
+					<% end %>
 
-				<div class="buttons_left">
+					<hr>
+
 					<div class="button_block">
 						<% if @board.images.count > 0 %>
 							<span class="search_submit"><%= submit_tag("Delete Selected Images") %></span>
 						<% end %>
 					</div>
-				</div>
 
-			<% end %>
+				<% end %>
 
-		</div>
+			</div>
 
-	<% else %>
+		<% else %>
 
-		<div id="board_images_block">
-			<!-- code block adds the images that belong to that specific board to the show view  -->
-			<% @board.images.each do |image| %> 
-
-				<div class="board_image">
+			<br class="vital">
+	
+			<div class="logged_out" id="board_images_block">
+				<!-- code block adds the images that belong to that specific board to the show view  -->
+				<% @board.images.each do |image| %> 
 
 					<!-- makes the image a link to that images image show page -->
 					<%= link_to(image_path(image)) do %>
@@ -95,14 +95,13 @@
 					<% end %>
 						
 					<div class="url_container">
-							Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" readonly>
+						Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" readonly>
 						<%= hidden_field image.id, :value => image.id %>	
 					</div>	
-					
-				</div>
-			
-			<% end %>
-		</div>
+				
+				<% end %>
 
-	<% end %>
+			</div>
+
+		<% end %>
 </div>
