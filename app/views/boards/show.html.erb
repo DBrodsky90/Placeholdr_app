@@ -82,23 +82,26 @@
 		</div>
 
 	<% else %>
-	
+
 		<div id="board_images_block">
 			<!-- code block adds the images that belong to that specific board to the show view  -->
 			<% @board.images.each do |image| %> 
 
-				<!-- makes the image a link to that images image show page -->
-				<%= link_to(image_path(image)) do %>
-					<img src="<%= image.imgurl %>" class="board_single_image">
-				<% end %>
+				<div class="board_image">
+
+					<!-- makes the image a link to that images image show page -->
+					<%= link_to(image_path(image)) do %>
+						<img src="<%= image.imgurl %>" class="board_single_image">
+					<% end %>
+						
+					<div class="url_container">
+							Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" readonly>
+						<%= hidden_field image.id, :value => image.id %>	
+					</div>	
 					
-				<div class="url_container">
-						Copy Image URL: <input type="text" name="url" value="<%= image.imgurl %>" readonly>
-					<%= hidden_field image.id, :value => image.id %>	
-				</div>	
+				</div>
 			
 			<% end %>
-
 		</div>
 
 	<% end %>
