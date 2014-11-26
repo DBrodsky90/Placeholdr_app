@@ -661,3 +661,7 @@ input[type=text]:focus, input[type=password]:focus {
     color: #f0ff00;
 }
 
+#board_image.logged_out {
+    display: inline-block;
+}
+
